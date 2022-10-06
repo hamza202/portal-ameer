@@ -6,6 +6,7 @@
 @import 'variables';
 @import 'buttons';
 @import 'font_type';
+@import "other";
 
 .container-content {
   @apply xxlUp:max-w-[1500px] w-full smUp:w-[87%] pl-[15px] pr-[15px] smUp:pl-0 smUp:pr-0 relative ml-auto mr-auto

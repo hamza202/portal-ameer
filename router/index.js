@@ -7,7 +7,7 @@ const routes = [
         component: () => import('../src/views/Home.vue'),
         meta:{
             requiresAuth: false,
-            pageTitle:'Home'
+            pageTitle:'home'
         }
     },
     {
@@ -16,6 +16,14 @@ const routes = [
         meta:{
             requiresAuth: false,
             pageTitle:'login'
+        }
+    },
+    {
+        path: '/course-details',
+        component: () => import('../src/views/courses/CourseDetails.vue'),
+        meta:{
+            requiresAuth: false,
+            pageTitle:'course-details'
         }
     },
     // {

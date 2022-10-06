@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "mixins";
+@import 'variables';
+@import 'buttons';
+@import 'font_type';
+
+.container-content {
+  @apply xxlUp:max-w-[1500px] w-full smUp:w-[87%] pl-[15px] pr-[15px] smUp:pl-0 smUp:pr-0 relative ml-auto mr-auto
+}
+
+.p-menubar {
+  @apply pl-0 pr-0 #{!important}
+}
+
+.main-header-menu {
+  .p-menubar {
+    .p-menubar-root-list {
+      @apply ltr:3mdUp:ml-16 rtl:3mdUp:mr-16;
+      li {
+        a {
+          text-transform: uppercase;
+          transition: all ease-out 0.3s;
+          font-weight: 500;
+
+          &.active-link {
+            color: $title-color;
+          }
+        }
+
+        &:not(:last-child) {
+          @media screen and (min-width: 960px) {
+            margin-inline-end: 20px;
+          }
+        }
+      }
+    }
+
+    .logo {
+      img {
+        max-height: 45px;
+        width: auto;
+      }
+    }
+  }
+}
+
+.category-menu {
+  @apply bg-gray-900;
+  .p-menubar {
+    ul {
+      li {
+        a {
+          @apply capitalize py-3 block text-green-100 text-sm;
+          transition: all ease-out 0.3s;
+          font-weight: 500;
+        }
+
+        &:not(:last-child) {
+          @media screen and (min-width: 960px) {
+            margin-inline-end: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.p-overlaypanel .p-overlaypanel-content {
+  padding: 0.5rem;
+}
+
+.p-menubar-button {
+  margin-inline-start: 10px;
+}
+
+.p-inputtext {
+  padding: 0.65rem;
+}
+
+.p-inputtext:enabled:focus {
+  box-shadow: none;
+  border-color: $second-color;
+}
+
+.p-overlaypanel {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+//RTL
+html[dir=rtl] {
+  .p-menubar .p-menubar-custom, .p-menubar .p-menubar-end {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .p-input-icon-left > .p-inputtext {
+    padding-left: 0.65rem;
+    padding-right: 2.5rem;
+  }
+
+  .p-input-icon-left > i:first-of-type {
+    right: 0.75rem;
+    left: auto;
+  }
+
+  .p-menu .p-menuitem-link .p-menuitem-icon {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+}
+
+.cart-drop-lst {
+  li {
+    p {
+      @include oneline1(2);
+    }
+
+    @apply pb-3 mb-3 border-b border-gray-800
+  }
+}
+
+.main-link {
+  @apply text-green-100 hover:text-green-500 duration-300 ease-in-out transition-all;
+}

@@ -1,0 +1,227 @@
+.btn {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+%btn-config {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 9px 15px;
+  border: 0;
+  border-radius: 50px;
+
+  &:disabled {
+    cursor: auto;
+  }
+
+  //
+  //@include media-breakpoint-down(sm) {
+  //  font-size: 14px;
+  //}
+}
+
+.main-btn {
+  @extend %btn-config;
+  background-color: $second-color;
+  color: white;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background-color: $main-color;
+    color: white;
+  }
+}
+.main-btn-noHover{
+  @extend %btn-config;
+  background-color: $second-color;
+  color: white;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    color: white;
+  }
+}
+//.green-btn {
+//  @extend %btn-comfig;
+//  background-color: $green-color;
+//  color: $white;
+//
+//  &:hover {
+//    background-color: rgba($color: $green-color, $alpha: 0.9);
+//    color: $white;
+//  }
+//
+//  box-shadow: -15px 20px 50px rgba(10, 137, 137, 0.15);
+//
+//}
+
+
+//.icon-btn {
+//  svg {
+//    height: 15px;
+//    width: auto;
+//    margin-#{$dir}: 5px;
+//
+//    path {
+//      transition: all ease-in-out 0.3s;
+//    }
+//  }
+//}
+
+.next-button {
+  //--width: 180px;
+  --height: 48px;
+  border: 0;
+  position: relative;
+  min-height: var(--height);
+  border-radius: var(--height);
+  color: #fff;
+  font-weight: 400;
+  background-color: $second-color;
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+
+  .text,
+  .icon-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .icon-container {
+    --icon-size: 25px;
+    position: relative;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin-left: 15px;
+    transition: transform 500ms ease;
+
+    .icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      transition: transform 500ms ease, opacity 250ms ease;
+
+      &--left {
+        transform: translateX(-200%);
+        opacity: 0;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: #fff;
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $main-color;
+    border-radius: var(--height);
+    z-index: 1;
+    transition: transform 500ms ease;
+  }
+
+  &:hover {
+    color: $main-color;
+
+    &::after {
+      transform: translateX(calc(100% - 48px));
+    }
+
+    .icon-container {
+      transform: translateX(125%);
+
+      .icon {
+        &--left {
+          transform: translateX(-16px);
+          opacity: 1;
+        }
+
+        &--right {
+          transform: translateX(200%);
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.add-fav-button {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px #EBEBEB;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: all ease-in-out 0.3s;
+
+  &:hover {
+    border-color: $main-color;
+  }
+
+  svg {
+    height: 17px;
+    width: 18px;
+    fill: $main-color;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &.active {
+    border-color: $red-color;
+    svg {
+      fill: $red-color;
+    }
+  }
+}
+
+%menu-btn-config{
+  position: relative;
+  border: 1px solid $dark-gray-bg;
+  height: 47px;
+  width: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: white;
+  transition: all ease-out 0.3s;
+  .pi{
+    color: $main-color;
+    transition: all ease-out 0.3s;
+    font-size: 17px;
+  }
+  svg{
+    path{
+      transition: all ease-out 0.3s;
+    }
+  }
+  &:hover{
+    svg path{
+      fill: white;
+    }
+    background-color: $main-color;
+    .pi{
+      color: white;
+    }
+  }
+}
+.menu-btn{
+  @extend %menu-btn-config;
+}

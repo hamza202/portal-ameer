@@ -1,0 +1,125 @@
+$sourcefile: '/';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap');
+@font-face {
+  font-family: 'din';
+  src: local('din-Regular'), url("#{$sourcefile}fonts/ARBFONTS-DINNEXTLTARABIC-REGULAR-2.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'din';
+  src: local('din-Medium'), url("#{$sourcefile}fonts/ARBFONTS-DINNEXTLTARABIC-MEDIUM-2.TTF") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'din';
+  src: local('din-Bold'), url("#{$sourcefile}fonts/ARBFONTS-DINNEXTLTARABIC-BOLD-2.TTF") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'din';
+  src: local('din-Havy'), url("#{$sourcefile}fonts/ARBFONTS-DINNEXTLTARABIC-BLACK-2.TTF") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.head-font{
+  margin-bottom: 0;
+  font-family: 'din', sans-serif;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+//font size and type
+.hero-title{
+  font-size: 35px;
+  @apply xxxlUp:text-[40px] xxlDown:text-[30px] mdDown:text-[26px] smDown:text-[23px]
+}
+.sub-title{
+  font-size: 18px;
+  font-weight: 700;
+  color: $title-color;
+  padding-inline-start: 27px;
+  margin-bottom: 5px;
+  position: relative;
+  text-transform: uppercase;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20.414' height='19.828' viewBox='0 0 20.414 19.828'%3E%3Cg id='Group_388' data-name='Group 388' transform='translate(-308.713 -1368.086)'%3E%3Cline id='Line_7' data-name='Line 7' x1='17' y2='17' transform='translate(310.42 1369.5)' fill='none' stroke='%231be5b7' stroke-linecap='round' stroke-width='2'/%3E%3Cpath id='Path_23' data-name='Path 23' d='M13,0,6.5,6.5,0,13' transform='translate(315.42 1373.5)' fill='none' stroke='%23143c4e' stroke-linecap='round' stroke-width='1'/%3E%3Cline id='Line_8' data-name='Line 8' x1='13' y2='13' transform='translate(309.42 1369.5)' fill='none' stroke='%23143c4e' stroke-linecap='round' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @layer components {
+      @apply ltr:left-0 trl:right-0
+    }
+  }
+  &.text-white{
+    &:before{
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20.414' height='19.414' viewBox='0 0 20.414 19.414'%3E%3Cg id='Group_235' data-name='Group 235' transform='translate(-308.713 -1368.5)'%3E%3Cpath id='Path_411' data-name='Path 411' d='M17,0,11.156,5.844,0,17' transform='translate(310.42 1369.5)' fill='none' stroke='%231be5b7' stroke-linecap='round' stroke-width='2'/%3E%3Cpath id='Path_23' data-name='Path 23' d='M13,0,6.5,6.5,0,13' transform='translate(315.42 1373.5)' fill='%23fff' stroke='%23fff' stroke-linecap='round' stroke-width='1'/%3E%3Cline id='Line_8' data-name='Line 8' x1='13' y2='13' transform='translate(309.42 1369.5)' fill='none' stroke='%23fff' stroke-linecap='round' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+  }
+  @apply smDown:text-[15px]
+
+}
+.small-desc{
+  font-size: 15px;
+  @apply smDown:text-[14px]
+}
+.desc{
+  font-size: 15px;
+  @apply smDown:text-[14px]
+
+}
+.big-desc{
+  font-size: 18px;
+  @apply lgDown:text-[16px] xxxlUp:text-[20px]
+
+}
+.main-title{
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $main-color;
+  span{
+    color: $second-color;
+  }
+  @apply smDown:text-[22px] lgDown:text-[30px]
+
+}
+.title-1{
+  font-size: 22px;
+  @apply smDown:text-[17px] xlDown:text-[20px]
+
+}
+.title-2{
+  font-size: 20px;
+  @apply smDown:text-[17px] xlDown:text-[18px]
+
+}
+.title-3{
+  font-size: 18px;
+  @apply xlDown:text-[17px]
+}
+.section-description{
+  @extend .title-3;
+  color: rgba($title-color, 0.6);
+  font-weight: 400 ;
+}

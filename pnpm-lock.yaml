@@ -4,6 +4,7 @@ specifiers:
   '@intlify/vite-plugin-vue-i18n': ^6.0.1
   '@vitejs/plugin-vue': ^3.1.0
   autoprefixer: ^10.4.12
+  axios: ^0.21.4
   postcss: ^8.4.16
   primeicons: ^6.0.1
   primevue: ^3
@@ -12,6 +13,7 @@ specifiers:
   vee-validate: ^4.5.11
   vite: ^3.1.0
   vue: ^3.2.37
+  vue-axios: ^3.3.7
   vue-i18n: ^9.2.2
   vue-meta: 3.0.0-alpha.10
   vue-router: '4'
@@ -19,10 +21,12 @@ specifiers:
   yup: ^0.32.8
 
 dependencies:
+  axios: 0.21.4
   primeicons: 6.0.1
   primevue: 3.17.0_sdqc6lvpp5fksjjzbbnroqp2wi
   vee-validate: 4.6.10_vue@3.2.39
   vue: 3.2.39
+  vue-axios: 3.4.1_axios@0.21.4+vue@3.2.39
   vue-meta: 3.0.0-alpha.10_vue@3.2.39
   vue-router: 4.1.5_vue@3.2.39
   vuex: 4.0.2_vue@3.2.39
@@ -360,6 +364,14 @@ packages:
       postcss: 8.4.16
       postcss-value-parser: 4.2.0
     dev: true
+
+  /axios/0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.15.2
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
@@ -721,6 +733,16 @@ packages:
     dependencies:
       to-regex-range: 5.0.1
     dev: true
+
+  /follow-redirects/1.15.2:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
 
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
@@ -1158,6 +1180,16 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /vue-axios/3.4.1_axios@0.21.4+vue@3.2.39:
+    resolution: {integrity: sha512-8YZYUOQrBEJktxoQtrM4rr2LfVcDaWfJqv8MqtLlgLlkuBvCYKFSZSo6AXQ4YcCzdgccDqstmuaEh68lcH9xWA==}
+    peerDependencies:
+      axios: '>= 0.20.0'
+      vue: ^3.0.0 || ^2.0.0
+    dependencies:
+      axios: 0.21.4
+      vue: 3.2.39
+    dev: false
 
   /vue-i18n/9.2.2_vue@3.2.39:
     resolution: {integrity: sha512-yswpwtj89rTBhegUAv9Mu37LNznyu3NpyLQmozF3i1hYOhwpG8RjcjIFIIfnu+2MDZJGSZPXaKWvnQA71Yv9TQ==}

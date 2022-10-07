@@ -9,24 +9,33 @@
   </div>
 </template>
 <script>
-import { useMeta } from 'vue-meta';
+import {useMeta} from 'vue-meta';
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
+import ApiService from "./services/ApiService";
+
 export default {
   components: {TheFooter, TheHeader},
-   setup () {
-        useMeta({
-        title: `Cyber Sky || Home`
-      })
+  setup() {
+    useMeta({
+      title: `Cyber Sky || Home`
+    })
   },
   data() {
     return {
+      data: null
     }
   },
   methods: {},
-  mounted() {},
-  created() {
-    console.log(import.meta.env.VITE_API_URL)
+  mounted() {
+
+  },
+   created() {
+       ApiService.post('auth/login', {email: 'hamza@gmail.com', password:'12345678'}).then((res) =>{
+        console.log(res)
+      })
+
+    ApiService.init()
   },
   computed: {},
 }

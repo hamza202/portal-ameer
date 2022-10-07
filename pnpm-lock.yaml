@@ -5,6 +5,7 @@ specifiers:
   '@vitejs/plugin-vue': ^3.1.0
   autoprefixer: ^10.4.12
   axios: ^0.21.4
+  feather-icons: '4'
   postcss: ^8.4.16
   primeicons: ^6.0.1
   primevue: ^3
@@ -14,6 +15,8 @@ specifiers:
   vite: ^3.1.0
   vue: ^3.2.37
   vue-axios: ^3.3.7
+  vue-feather: '2'
+  vue-feather-icons: ^5.1.0
   vue-i18n: ^9.2.2
   vue-meta: 3.0.0-alpha.10
   vue-router: '4'
@@ -22,11 +25,14 @@ specifiers:
 
 dependencies:
   axios: 0.21.4
+  feather-icons: 4.29.0
   primeicons: 6.0.1
   primevue: 3.17.0_sdqc6lvpp5fksjjzbbnroqp2wi
   vee-validate: 4.6.10_vue@3.2.39
   vue: 3.2.39
   vue-axios: 3.4.1_axios@0.21.4+vue@3.2.39
+  vue-feather: 2.0.0_waf6tckrj56won7o6vjkrssvqm
+  vue-feather-icons: 5.1.0
   vue-meta: 3.0.0-alpha.10_vue@3.2.39
   vue-router: 4.1.5_vue@3.2.39
   vuex: 4.0.2_vue@3.2.39
@@ -371,6 +377,8 @@ packages:
       follow-redirects: 1.15.2
     transitivePeerDependencies:
       - debug
+  /babel-helper-vue-jsx-merge-props/2.0.3:
+    resolution: {integrity: sha512-gsLiKK7Qrb7zYJNgiXKpXblxbV5ffSwR0f5whkPAaBAR4fhi6bwRZxX9wBlIc5M/v8CCkXUbXZL4N/nSE97cqg==}
     dev: false
 
   /binary-extensions/2.2.0:
@@ -420,9 +428,18 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
+
   /color-name/1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
+
+  /core-js/3.25.5:
+    resolution: {integrity: sha512-nbm6eZSjm+ZuBQxCUPQKQCoUEfFOXjUZ8dTTyikyKaWrTYmAVbykQfwsKE5dBK88u3QCkCrzsx/PPlKfhsvgpw==}
+    requiresBuild: true
+    dev: false
 
   /cssesc/3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
@@ -726,6 +743,13 @@ packages:
     dependencies:
       reusify: 1.0.4
     dev: true
+
+  /feather-icons/4.29.0:
+    resolution: {integrity: sha512-Y7VqN9FYb8KdaSF0qD1081HCkm0v4Eq/fpfQYQnubpqi0hXx14k+gF9iqtRys1SIcTEi97xDi/fmsPFZ8xo0GQ==}
+    dependencies:
+      classnames: 2.3.2
+      core-js: 3.25.5
+    dev: false
 
   /fill-range/7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
@@ -1188,6 +1212,19 @@ packages:
       vue: ^3.0.0 || ^2.0.0
     dependencies:
       axios: 0.21.4
+  /vue-feather-icons/5.1.0:
+    resolution: {integrity: sha512-ZyM2yFGmL9DYLZYHm63KV1zCQOj8czC2LzDSkxoIp9o6zMAOY4yv1FkxbX+XNUwcH3RRrAuvf25Ij7CnUUsQVA==}
+    dependencies:
+      babel-helper-vue-jsx-merge-props: 2.0.3
+    dev: false
+
+  /vue-feather/2.0.0_waf6tckrj56won7o6vjkrssvqm:
+    resolution: {integrity: sha512-GBvxJWu2ycGTpB8duYWnc5S/TwWPPb2G5Ft2NbkwK1vZkUDUOTYqIb4Nh1HOL6A37Isfrd0Guun0lesS97PfxA==}
+    peerDependencies:
+      feather-icons: ^4.28.0
+      vue: ^3.0.0
+    dependencies:
+      feather-icons: 4.29.0
       vue: 3.2.39
     dev: false
 

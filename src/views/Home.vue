@@ -1,16 +1,18 @@
 <template>
-<div>
-<!--  {{$t('hello')}}-->
+  <div>
+    <!--  {{$t('hello')}}-->
 
-</div>
+    <CoursePage />
+  </div>
 </template>
 
 <script>
+import CoursePage from "../components/CoursePage.vue";
+
 export default {
-  name: "Home"
-}
+  name: "Home",
+  components: { CoursePage },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

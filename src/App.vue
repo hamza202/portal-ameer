@@ -3,7 +3,7 @@
     <metainfo>
       <template v-slot:title="{ content }">{{ content }}</template>
     </metainfo>
-    <the-header/>
+    <the-header />
     <router-view></router-view>
     <the-footer></the-footer>
   </div>
@@ -38,8 +38,6 @@ export default {
     ApiService.init()
   },
   computed: {},
-}
+};
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>

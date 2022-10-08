@@ -151,3 +151,8 @@ html[dir=rtl] {
     @apply text-sm
   }
 }
+.field-checkbox{
+  .p-checkbox{
+    margin-inline-end: 0.4rem;
+  }
+}

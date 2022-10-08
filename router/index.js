@@ -1,4 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
+import store from '@/store';
+import { Mutations, Actions } from '@/store/enums/StoreEnums';
+import JwtService from '@/services/JwtService';
 
 const routes = [
   {
@@ -66,8 +69,8 @@ const router = createRouter({
 
 router.beforeEach(() => {
   // reset config to initial state
+  store.dispatch(Actions.VERIFY_AUTH, { api_token: JwtService.getToken() });
 
-  // store.dispatch(Actions.VERIFY_AUTH);
 
   // Scroll page to top on every route change
   setTimeout(() => {

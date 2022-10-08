@@ -8,19 +8,19 @@ module.exports = {
         extend: {},
         screens: {
             'smUp': {'min': '576px'},
-            'smDown': {'max': '576px'},
             'mdUp': {'min': '768px'},
-            'mdDown': {'min': '768px'},
             '3mdUp':{'min': '960px'},
-            '3mdDown':{'max': '960px'},
             'lgUp': {'min': '992px'},
-            'lgDown': {'max': '992px'},
             'xlUp': {'min': '1200px'},
-            'xlDown': {'max': '1200px'},
             'xxlUp': {'min': '1400px'},
-            'xxlDown': {'max': '1400px'},
             'xxxlUp': {'min': '1600px'},
-            'xxxlDown': {'max': '1600px'}
+            'xxxlDown': {'max': '1600px'},
+            'xxlDown': {'max': '1400px'},
+            'xlDown': {'max': '1200px'},
+            'lgDown': {'max': '992px'},
+            '3mdDown':{'max': '960px'},
+            'mdDown': {'max': '768px'},
+            'smDown': {'max': '576px'},
         },
         colors: {
             white:{

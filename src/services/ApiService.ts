@@ -14,7 +14,6 @@ class ApiService {
      * @description initialize vue axios
      */
     public static init(url) {
-        // @ts-ignore
         axios.defaults.baseURL = url;
     }
 
@@ -71,15 +70,6 @@ class ApiService {
         return axios.put(`${resource}/${slug}`, params);
     }
 
-    /**
-     * @description Send the PUT HTTP request
-     * @param resource: string
-     * @param params: AxiosRequestConfig
-     * @returns Promise<AxiosResponse>
-     */
-    public static put(resource: string, params: AxiosRequestConfig): Promise<AxiosResponse> {
-        return axios.put(`${resource}`, params);
-    }
 
     /**
      * @description Send the DELETE HTTP request

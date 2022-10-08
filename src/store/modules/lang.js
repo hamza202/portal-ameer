@@ -1,4 +1,4 @@
-import i18n from "../../src/plugin/i18n.js";
+import i18n from "../../plugin/i18n.js";
 export default {
   namespaced: true,
   state() {

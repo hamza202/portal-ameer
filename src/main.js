@@ -9,7 +9,7 @@ import VueAxios from 'vue-axios';
 import axios from 'axios';
 
 import App from './App.vue'
-import store from '../store/index.js';
+import store from './store/index.js';
 import  i18n  from './plugin/i18n.js'
 import { createMetaManager} from 'vue-meta'
 const metaManager = createMetaManager()

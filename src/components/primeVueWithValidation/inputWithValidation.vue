@@ -9,7 +9,7 @@
         :aria-describedby="`${name}-help`"
         :autocomplete="`new-${name}`"
         :class="{ 'p-invalid': errorMessage }"
-        :placeholder="$t(placeHolder)"
+        :placeholder="placeHolder"
         :type="type"
         :value="modelValue"
         class="w-full"
@@ -31,7 +31,11 @@ import {useField} from 'vee-validate';
 
 export default defineComponent({
   props: {
-    topLabel:{},
+    TPlaceHolder:{
+      default: true
+    },
+    setPlaceHolder: {type: String},
+    topLabel: {type:Boolean},
     icon: {
       type: String
     },
@@ -61,11 +65,24 @@ export default defineComponent({
   computed: {
     placeHolder() {
       if (this.lang) {
-        return `${this.$t(this.label)} ${this.$t("in")} ${this.$t(this.lang)}`
+        if (this.setPlaceHolder) {
+          if(this.TPlaceHolder){
+            return this.$t(this.setPlaceHolder);
+          }else {
+            return this.setPlaceHolder;
+          }
+        } else {
+          return `${this.$t(this.label)} ${this.$t("in")} ${this.$t(this.lang)}`
+        }
       }
-
+      if (this.setPlaceHolder) {
+        if(this.TPlaceHolder){
+          return this.$t(this.setPlaceHolder);
+        }else {
+          return this.setPlaceHolder;
+        }
+      }
       return this.$t(this.label)
-
     }
   }
 })

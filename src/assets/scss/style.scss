@@ -126,3 +126,23 @@ html[dir=rtl] {
 .main-link {
   @apply text-green-100 hover:text-green-500 duration-300 ease-in-out transition-all;
 }
+.section-padding{
+  @apply py-20 mdDown:py-10 lgDown:py-16
+}
+.auth-card {
+  @apply border border-gray-800 p-5 lgUp:p-8 xlUp:p-10 rounded-2xl
+}
+.form-style{
+  .field{
+    @apply mb-5;
+    label{
+      @apply pb-2 text-green-300;
+    }
+    i{
+      @apply text-green-500;
+    }
+    input{
+      @apply rounded-xl h-[50px] bg-gray-900 focus:bg-white-100;
+    }
+  }
+}

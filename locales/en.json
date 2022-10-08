@@ -1,4 +1,9 @@
 {
   "home": "Home",
-  "search": "Search"
+  "search": "Search",
+  "enter_pass": "Enter password",
+  "email": "Email",
+  "password": "Password",
+  "sign_in": "Sign in",
+  "forget_pass": "Forgot your password?"
 }

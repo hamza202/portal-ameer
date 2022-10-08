@@ -1,13 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
+import { fileURLToPath, URL } from "url";
 import vueI18n from '@intlify/vite-plugin-vue-i18n'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
 
@@ -18,9 +17,7 @@ export default defineConfig({
       // compositionOnly: false,
 
       // you need to set i18n resource including paths !
-      include: [path.resolve(__dirname, './locales/**')],
-
-
+      include: [fileURLToPath(new URL("./locales/**", import.meta.url))],
     })
   ],
 })

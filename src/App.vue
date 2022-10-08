@@ -10,9 +10,9 @@
 </template>
 <script>
 import {useMeta} from 'vue-meta';
-import TheHeader from "./components/TheHeader.vue";
-import TheFooter from "./components/TheFooter.vue";
-import ApiService from "./services/ApiService";
+import TheHeader from "@/components/TheHeader.vue";
+import TheFooter from "@/components/TheFooter.vue";
+import ApiService from "@/services/ApiService";
 
 export default {
   components: {TheFooter, TheHeader},
@@ -31,12 +31,10 @@ export default {
 
   },
    created() {
-       ApiService.post('auth/login', {email: 'hamza@gmail.com', password:'12345678'}).then((res) =>{
-        console.log(res)
-      })
-
-    ApiService.init()
-  },
+      //  ApiService.post('auth/login', {email: 'hamza@gmail.com', password:'12345678'}).then((res) =>{
+      //   console.log(res)
+      // })
+   },
   computed: {},
 };
 </script>

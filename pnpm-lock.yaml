@@ -11,6 +11,7 @@ specifiers:
   primevue: ^3
   sass: ^1.55.0
   tailwindcss: ^3.1.8
+  typescript: ~4.5.5
   vee-validate: ^4.5.11
   vite: ^3.1.0
   vue: ^3.2.37
@@ -21,6 +22,7 @@ specifiers:
   vue-meta: 3.0.0-alpha.10
   vue-router: '4'
   vuex: ^4.0.2
+  vuex-module-decorators: ^1.0.1
   yup: ^0.32.8
 
 dependencies:
@@ -28,6 +30,7 @@ dependencies:
   feather-icons: 4.29.0
   primeicons: 6.0.1
   primevue: 3.17.0_sdqc6lvpp5fksjjzbbnroqp2wi
+  typescript: 4.5.5
   vee-validate: 4.6.10_vue@3.2.39
   vue: 3.2.39
   vue-axios: 3.4.1_axios@0.21.4+vue@3.2.39
@@ -36,6 +39,7 @@ dependencies:
   vue-meta: 3.0.0-alpha.10_vue@3.2.39
   vue-router: 4.1.5_vue@3.2.39
   vuex: 4.0.2_vue@3.2.39
+  vuex-module-decorators: 1.2.0_vue@3.2.39+vuex@4.0.2
   yup: 0.32.11
 
 devDependencies:
@@ -377,6 +381,8 @@ packages:
       follow-redirects: 1.15.2
     transitivePeerDependencies:
       - debug
+    dev: false
+
   /babel-helper-vue-jsx-merge-props/2.0.3:
     resolution: {integrity: sha512-gsLiKK7Qrb7zYJNgiXKpXblxbV5ffSwR0f5whkPAaBAR4fhi6bwRZxX9wBlIc5M/v8CCkXUbXZL4N/nSE97cqg==}
     dev: false
@@ -1153,6 +1159,12 @@ packages:
     resolution: {integrity: sha512-0a5EOkAUp8D4moMi2W8ZF8jcga7BgZd91O/yabJCFY8az+XSzeGyTKs0Aoo897iV1Nj6guFq8orWDS96z91oGg==}
     dev: false
 
+  /typescript/4.5.5:
+    resolution: {integrity: sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: false
+
   /update-browserslist-db/1.0.9_browserslist@4.21.4:
     resolution: {integrity: sha512-/xsqn21EGVdXI3EXSum1Yckj3ZVZugqyOZQ/CxYPBD/R+ko9NSUScf8tFF4dOKY+2pvSSJA/S+5B8s4Zr4kyvg==}
     hasBin: true
@@ -1212,6 +1224,9 @@ packages:
       vue: ^3.0.0 || ^2.0.0
     dependencies:
       axios: 0.21.4
+      vue: 3.2.39
+    dev: false
+
   /vue-feather-icons/5.1.0:
     resolution: {integrity: sha512-ZyM2yFGmL9DYLZYHm63KV1zCQOj8czC2LzDSkxoIp9o6zMAOY4yv1FkxbX+XNUwcH3RRrAuvf25Ij7CnUUsQVA==}
     dependencies:
@@ -1266,6 +1281,18 @@ packages:
       '@vue/runtime-dom': 3.2.39
       '@vue/server-renderer': 3.2.39_vue@3.2.39
       '@vue/shared': 3.2.39
+
+  /vuex-module-decorators/1.2.0_vue@3.2.39+vuex@4.0.2:
+    resolution: {integrity: sha512-3lHp75qVgrNXUpFKs4J4eRnrxjY3BYUkHwR+ZKvvIycw/7tDwlL0RPuiYLwrHEUBTvJePSZaehZJ0BMTw1/ugQ==}
+    engines: {node: '>= 8', npm: '>= 5', yarn: '>= 1'}
+    requiresBuild: true
+    peerDependencies:
+      vue: '>=2'
+      vuex: '>=3'
+    dependencies:
+      vue: 3.2.39
+      vuex: 4.0.2_vue@3.2.39
+    dev: false
 
   /vuex/4.0.2_vue@3.2.39:
     resolution: {integrity: sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==}

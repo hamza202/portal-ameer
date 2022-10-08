@@ -5,5 +5,10 @@
   "email": "Email",
   "password": "Password",
   "sign_in": "Sign in",
-  "forget_pass": "Forgot your password?"
+  "forget_pass": "Forgot your password?",
+  "sign_up": "sign up",
+  "first_name": "First name",
+  "enter_f_name": "Enter first name",
+  "last_name": "Last name",
+  "enter_l_name": "Enter last name"
 }

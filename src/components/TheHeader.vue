@@ -98,6 +98,32 @@
               </div>
             </div>
           </template>
+          <template #end v-else>
+            <div class="grid grid-flow-col gap-4">
+              <router-link to="/log-in" class="flex items-center uppercase text-opacity-60 text-green-100 transition-all ease-in-out duration-300 hover:text-green-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15.222" height="17" viewBox="0 0 15.222 17">
+                  <g id="Icon_feather-user" data-name="Icon feather-user" transform="translate(0.5 0.5)">
+                    <path id="Path_13" data-name="Path 13" d="M20.222,28.518V26.512A3.8,3.8,0,0,0,16.667,22.5H9.556A3.8,3.8,0,0,0,6,26.512v2.006" transform="translate(-6 -12.518)" fill="none" stroke="#1be5b7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+                    <path id="Path_14" data-name="Path 14" d="M19.975,8.512A3.988,3.988,0,1,1,15.988,4.5,4,4,0,0,1,19.975,8.512Z" transform="translate(-8.877 -4.5)" fill="none" stroke="#1be5b7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+                  </g>
+                </svg>
+                <span class="rtl:pr-2 ltr:pl-2">
+                  {{$t('sign_in')}}
+                </span>
+              </router-link>
+              <router-link to="/sign_up" class="flex items-center uppercase text-opacity-60 text-green-100 transition-all ease-in-out duration-300 hover:text-green-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15.4" height="17" viewBox="0 0 15.4 17">
+                  <g id="Icon_feather-lock" data-name="Icon feather-lock" transform="translate(0.5 0.5)">
+                    <path id="Path_15" data-name="Path 15" d="M6.1,16.5H17.3a1.686,1.686,0,0,1,1.6,1.76v6.161a1.686,1.686,0,0,1-1.6,1.76H6.1a1.686,1.686,0,0,1-1.6-1.76V18.26A1.686,1.686,0,0,1,6.1,16.5Z" transform="translate(-4.5 -10.181)" fill="none" stroke="#1be5b7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                    <path id="Path_16" data-name="Path 16" d="M10.5,10.921V7.4c0-2.43,1.647-4.4,3.68-4.4s3.68,1.97,3.68,4.4v3.52" transform="translate(-6.98 -3)" fill="none" stroke="#1be5b7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                  </g>
+                </svg>
+                <span class="rtl:pr-2 ltr:pl-2">
+                  {{$t('sign_up')}}
+                </span>
+              </router-link>
+            </div>
+          </template>
         </Menubar>
       </div>
     </div>

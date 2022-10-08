@@ -15,10 +15,37 @@
             <div class="lgUp:basis-8/12 xlUp:basis-6/12 basis-full">
               <div class="auth-card">
                 <h1 class="main-title mb-6 smDown:mb-4 capitalize">
-                  {{$t('sign_in')}}
+                  {{ $t('sign_up') }}
                 </h1>
+                <div class="flex smDown:flex-wrap smUp:space-x-3">
+                  <div class="smUp:basis-6/12 basis-full">
+                    <input-with-validation
+                        label="first_name"
+                        :isRequired="true"
+                        :topLabel="true"
+                        type="text"
+                        name="first_name"
+                        v-model="form.first_name"
+                        :TPlaceHolder="true"
+                        setPlaceHolder="enter_f_name"
+                        icon="pi pi-user"></input-with-validation>
+                  </div>
+                  <div class="smUp:basis-6/12 basis-full">
+                    <input-with-validation
+                        label="last_name"
+                        :isRequired="true"
+                        :topLabel="true"
+                        type="text"
+                        name="first_name"
+                        v-model="form.last_name"
+                        :TPlaceHolder="true"
+                        setPlaceHolder="enter_l_name"
+                        icon="pi pi-user"></input-with-validation>
+                  </div>
+                </div>
                 <input-with-validation
                     label="email"
+                    :isRequired="true"
                     :topLabel="true"
                     type="email"
                     name="email"
@@ -28,6 +55,7 @@
                     icon="pi pi-envelope"></input-with-validation>
                 <input-with-validation
                     label="password"
+                    :isRequired="true"
                     :topLabel="true"
                     type="password"
                     name="password"
@@ -58,6 +86,7 @@ export default {
   data() {
     return {
       form: {
+        first_name:null,
         email: null,
         password: null,
       },
@@ -82,9 +111,10 @@ export default {
   computed: {
     schema() {
       return Yup.object().shape({
+        first_name:Yup.string().required().label(this.$t('first_name')),
+        last_name:Yup.string().required().label(this.$t('last_name')),
         email: Yup.string().required().email().label(this.$t('email')),
         password: Yup.string().required().label(this.$t('password')),
-
       });
     }
   },

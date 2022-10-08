@@ -1,7 +1,7 @@
 <template>
   <div class="field">
     <label v-if="lang && topLabel" for="name">{{ `${$t(label)} ${$t("in")} ${$t(lang)}` }}</label>
-    <label v-else-if="topLabel" for="name">{{ `${$t(label)}` }}</label>
+    <label v-else-if="topLabel" for="name">{{ `${$t(label)}` }} <span v-if="isRequired" class="text-red-100 !inline">*</span></label>
     <span :class="{'p-input-icon-left w-full':icon}">
       <i v-if="icon" :class="icon"/>
     <InputText
@@ -31,6 +31,7 @@ import {useField} from 'vee-validate';
 
 export default defineComponent({
   props: {
+    isRequired: false,
     TPlaceHolder:{
       default: true
     },

@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
@@ -16,6 +16,14 @@ const routes = [
     meta: {
       requiresAuth: false,
       pageTitle: "login",
+    },
+  },
+  {
+    path: "/sign_up",
+    component: () => import("../src/views/auth/SignUp.vue"),
+    meta: {
+      requiresAuth: false,
+      pageTitle: "sign_up",
     },
   },
   {
@@ -44,7 +52,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

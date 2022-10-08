@@ -136,7 +136,7 @@ html[dir=rtl] {
   .field{
     @apply mb-5;
     label{
-      @apply pb-2 text-green-300;
+      @apply pb-1 text-green-300;
     }
     i{
       @apply text-green-500;
@@ -144,5 +144,10 @@ html[dir=rtl] {
     input{
       @apply rounded-xl h-[50px] bg-gray-900 focus:bg-white-100;
     }
+  }
+}
+.fv-plugins-message-container{
+  .p-error{
+    @apply text-sm
   }
 }

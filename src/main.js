@@ -3,19 +3,19 @@ import "primevue/resources/primevue.min.css";
 import "primevue/resources/themes/lara-light-teal/theme.css";
 import "primeicons/primeicons.css";
 import "./assets/scss/bootstrap/bootstrap.scss";
-import './assets/scss/style.scss';
+import "./assets/scss/style.scss";
 import ApiService from "./services/ApiService";
-import VueAxios from 'vue-axios';
-import axios from 'axios';
-
-import App from './App.vue'
-import store from './store/index.js';
-import  i18n  from './plugin/i18n.js'
-import { createMetaManager} from 'vue-meta'
-const metaManager = createMetaManager()
-import {globalComponents} from "./components/GlobalComponents";
+import VueAxios from "vue-axios";
+import axios from "axios";
+import VuePlyr from "vue-plyr";
+import "vue-plyr/dist/vue-plyr.css";
+import App from "./App.vue";
+import store from "./store/index.js";
+import i18n from "./plugin/i18n.js";
+import { createMetaManager } from "vue-meta";
+const metaManager = createMetaManager();
+import { globalComponents } from "./components/GlobalComponents";
 import VueFeather from "vue-feather";
-
 
 //Start vee-validate
 import { ErrorMessage, Field, Form, configure } from "vee-validate";
@@ -31,6 +31,9 @@ const app = createApp(App);
 app.use(i18n);
 app.use(store);
 app.use(metaManager);
+app.use(VuePlyr, {
+  plyr: {},
+});
 app.component(VueFeather.name, VueFeather);
 
 app.component("FieldValidate", Field);
@@ -41,7 +44,7 @@ globalComponents(app);
 //Route
 import router from "../router/index.js";
 app.use(router);
-app.use(VueAxios, axios)
+app.use(VueAxios, axios);
 ApiService.init(import.meta.env.VITE_API_URL);
 //End Route
 

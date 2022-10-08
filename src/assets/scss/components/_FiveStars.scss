@@ -1,0 +1,22 @@
+.five-stars-view {
+  display: flex;
+}
+
+.five-stars-view .star {
+  margin: 0 1px;
+}
+
+.five-stars-view .star svg {
+  stroke: #ffd601;
+}
+
+@for $i from 1 through 5 {
+  .five-stars-view.stars-#{$i} .star svg {
+    stroke: #ffd601;
+    fill: #ffd601;
+  }
+  .five-stars-view.stars-#{$i} .star:nth-child(#{$i}) ~ .star svg {
+    stroke: #ffd601;
+    fill: none;
+  }
+}

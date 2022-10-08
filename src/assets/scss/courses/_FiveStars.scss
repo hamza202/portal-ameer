@@ -1,0 +1,49 @@
+.five-stars-view {
+  display: flex;
+}
+
+.five-stars-view {
+  .star {
+    margin: 0 1px;
+    svg {
+      stroke: #ffd601;
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &.five-stars-style-1 {
+    .star {
+      svg {
+        stroke: #2b5f76;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .five-stars-view.five-stars-style-2.stars-#{$i} .star svg {
+    stroke: #ffd601;
+    fill: #ffd601;
+  }
+
+  .five-stars-view.five-stars-style-2.stars-#{$i}
+    .star:nth-child(#{$i})
+    ~ .star
+    svg {
+    stroke: #ffd601;
+    fill: none;
+  }
+
+  .five-stars-view.five-stars-style-1.stars-#{$i} .star svg {
+    stroke: #ffd601;
+    fill: none;
+  }
+
+  .five-stars-view.five-stars-style-1.stars-#{$i}
+    .star:nth-child(#{$i})
+    ~ .star
+    svg {
+    stroke: #2b5f76;
+    fill: none;
+  }
+}

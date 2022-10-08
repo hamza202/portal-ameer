@@ -1,64 +1,42 @@
 <template>
-  <div class="course-page">
-    <div class="course-page-header">
+  <div class="course-page-watch">
+    <div class="course-page-watch-header">
       <div class="container-content">
-        <div class="row align-items-center">
-          <div class="col-lg-3">
-            <div class="course-image">
-              <img src="/images/course-1.png" alt="" />
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="course-sec-video">
+              <video-player
+                :options="{
+                  url: 'https://www.w3schools.com/html/mov_bbb.mp4',
+                  size: 1080,
+                }"
+              />
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="course-header-details">
-              <h5>New</h5>
-              <h1>Cyber Security For Beginners v2022</h1>
-              <div class="add-to-favourite">
-                <span>Owned</span>
-                <button class="btn">
-                  <vue-feather type="heart" />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="course-header-details-box">
-              <h5>Course Category</h5>
-              <p>
-                <vue-feather type="list" /><span>Course Category NAME</span>
-              </p>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="course-header-details-box">
-                  <h5>hours</h5>
-                  <p><vue-feather type="clock" /><span>21</span></p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="course-header-details-box">
-                  <h5>videos</h5>
-                  <p><vue-feather type="video" /><span>84</span></p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="course-header-details-box">
-                  <h5>FILE</h5>
-                  <p><vue-feather type="download" /><span>9</span></p>
-                </div>
-              </div>
-            </div>
-            <div class="course-header-details-box">
-              <h5>levely</h5>
-              <p><vue-feather type="trending-up" /><span>Beginner</span></p>
-            </div>
-
-            <div class="course-header-details-box">
-              <h5>Ratings</h5>
-              <div class="d-flex">
-                <FiveStars size="5" themeStyle="1" stars="4" />
-
-                <span>4/5</span>
-              </div>
+          <div class="col-lg-4 position-relative">
+            <div class="course-accordion">
+              <Accordion>
+                <AccordionTab
+                  ><template #header>
+                    <h4>Introduction</h4>
+                    <div class="lectures-count">3 lectures</div>
+                  </template>
+                  <ul>
+                    <li>
+                      <div class="icon">
+                        <vue-feather type="video" />
+                      </div>
+                      <h5>What is Reconnaissance</h5>
+                      <div class="play">
+                        <span>play</span>
+                        <vue-feather type="play" />
+                      </div>
+                    </li>
+                  </ul>
+                </AccordionTab>
+                <AccordionTab header="Header II"> Content </AccordionTab>
+                <AccordionTab header="Header III"> Content </AccordionTab>
+              </Accordion>
             </div>
           </div>
         </div>
@@ -72,7 +50,7 @@
               <div class="course-page-body-details">
                 <h2>Details</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  ً Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   diam nonumy eirmod tempor invidunt ut labore et dolore magna
                   aliquyam erat, sed diam voluptua. At vero eos et accusam et
                   justo duo dolores et ea rebum. Stet clita kasd gubergren, no
@@ -110,30 +88,6 @@
                   11 Active Directory Attacks <br />
                   12 Report Writing <br />
                 </p>
-              </div>
-              <div class="course-accordion">
-                <Accordion>
-                  <AccordionTab
-                    ><template #header>
-                      <h4>Introduction</h4>
-                      <div class="lectures-count">3 lectures</div>
-                    </template>
-                    <ul>
-                      <li>
-                        <div class="icon">
-                          <vue-feather type="video" />
-                        </div>
-                        <h5>What is Reconnaissance</h5>
-                        <div class="play">
-                          <span>play</span>
-                          <vue-feather type="play" />
-                        </div>
-                      </li>
-                    </ul>
-                  </AccordionTab>
-                  <AccordionTab header="Header II"> Content </AccordionTab>
-                  <AccordionTab header="Header III"> Content </AccordionTab>
-                </Accordion>
               </div>
 
               <div class="reviews">
@@ -203,11 +157,18 @@
 import Accordion from "primevue/accordion";
 import AccordionTab from "primevue/accordiontab";
 import FiveStars from "@/components/FiveStars.vue";
+import VideoPlayer from "@/components/courses/VideoPlayer.vue";
+import ApiService from "@/services/ApiService";
+
 export default {
+  mounted() {
+    ApiService.get("courses");
+  },
   components: {
     Accordion: Accordion,
     AccordionTab: AccordionTab,
     FiveStars,
+    VideoPlayer,
   },
 };
 </script>

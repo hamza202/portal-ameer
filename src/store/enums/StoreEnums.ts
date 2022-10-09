@@ -5,6 +5,7 @@ enum Actions {
     LOGOUT = 'logout',
     REGISTER = 'register',
     FORGOT_PASSWORD = 'forgotPassword',
+    CHECK_USER = 'checkUser'
 
 }
 

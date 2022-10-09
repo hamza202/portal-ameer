@@ -10,7 +10,9 @@ specifiers:
   primeicons: ^6.0.1
   primevue: ^3
   sass: ^1.55.0
+  swiper: ^8.4.3
   tailwindcss: ^3.1.8
+  tailwindcss-rtl: ^0.9.0
   typescript: ~4.5.5
   vee-validate: ^4.5.11
   vite: ^3.1.0
@@ -20,6 +22,7 @@ specifiers:
   vue-feather-icons: ^5.1.0
   vue-i18n: ^9.2.2
   vue-meta: 3.0.0-alpha.10
+  vue-plyr: ^7.0.0
   vue-router: '4'
   vuex: ^4.0.2
   vuex-module-decorators: ^1.0.1
@@ -30,6 +33,7 @@ dependencies:
   feather-icons: 4.29.0
   primeicons: 6.0.1
   primevue: 3.17.0_sdqc6lvpp5fksjjzbbnroqp2wi
+  swiper: 8.4.3
   typescript: 4.5.5
   vee-validate: 4.6.10_vue@3.2.39
   vue: 3.2.39
@@ -37,6 +41,7 @@ dependencies:
   vue-feather: 2.0.0_waf6tckrj56won7o6vjkrssvqm
   vue-feather-icons: 5.1.0
   vue-meta: 3.0.0-alpha.10_vue@3.2.39
+  vue-plyr: 7.0.0
   vue-router: 4.1.5_vue@3.2.39
   vuex: 4.0.2_vue@3.2.39
   vuex-module-decorators: 1.2.0_vue@3.2.39+vuex@4.0.2
@@ -49,6 +54,7 @@ devDependencies:
   postcss: 8.4.16
   sass: 1.55.0
   tailwindcss: 3.1.8_postcss@8.4.16
+  tailwindcss-rtl: 0.9.0
   vite: 3.1.3_sass@1.55.0
   vue-i18n: 9.2.2_vue@3.2.39
 
@@ -258,6 +264,14 @@ packages:
       '@vue/compiler-core': 3.2.39
       '@vue/shared': 3.2.39
 
+  /@vue/compiler-sfc/2.7.10:
+    resolution: {integrity: sha512-55Shns6WPxlYsz4WX7q9ZJBL77sKE1ZAYNYStLs6GbhIOMrNtjMvzcob6gu3cGlfpCR4bT7NXgyJ3tly2+Hx8Q==}
+    dependencies:
+      '@babel/parser': 7.19.1
+      postcss: 8.4.16
+      source-map: 0.6.1
+    dev: false
+
   /@vue/compiler-sfc/3.2.39:
     resolution: {integrity: sha512-fqAQgFs1/BxTUZkd0Vakn3teKUt//J3c420BgnYgEOoVdTwYpBTSXCMJ88GOBCylmUBbtquGPli9tVs7LzsWIA==}
     dependencies:
@@ -456,6 +470,14 @@ packages:
   /csstype/2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
 
+  /csstype/3.1.1:
+    resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
+    dev: false
+
+  /custom-event-polyfill/1.0.7:
+    resolution: {integrity: sha512-TDDkd5DkaZxZFM8p+1I3yAlvM3rSr1wbrOliG4yJiwinMZN8z/iGL7BTlDkrJcYTmgUSb4ywVCc3ZaUtOtC76w==}
+    dev: false
+
   /debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -489,6 +511,12 @@ packages:
   /dlv/1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
     dev: true
+
+  /dom7/4.0.4:
+    resolution: {integrity: sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw==}
+    dependencies:
+      ssr-window: 4.0.2
+    dev: false
 
   /electron-to-chromium/1.4.258:
     resolution: {integrity: sha512-vutF4q0dTUXoAFI7Vbtdwen/BJVwPgj8GRg/SElOodfH7VTX+svUe62A5BG41QRQGk5HsZPB0M++KH1lAlOt0A==}
@@ -861,6 +889,10 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /loadjs/4.2.0:
+    resolution: {integrity: sha512-AgQGZisAlTPbTEzrHPb6q+NYBMD+DP9uvGSIjSUM5uG+0jG15cb8axWpxuOIqrmQjn6scaaH8JwloiP27b2KXA==}
+    dev: false
+
   /lodash-es/4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
     dev: false
@@ -1035,6 +1067,10 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /rangetouch/2.0.1:
+    resolution: {integrity: sha512-sln+pNSc8NGaHoLzwNBssFSf/rSYkqeBXzX1AtJlkJiUaVSJSbRAWJk+4omsXkN+EJalzkZhWQ3th1m0FpR5xA==}
+    dev: false
+
   /read-cache/1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
     dependencies:
@@ -1106,9 +1142,26 @@ packages:
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
 
+  /ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
+    dev: false
+
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /swiper/8.4.3:
+    resolution: {integrity: sha512-+Ne/3rSZ1t28r//Upg8AdLgXJ+/nTw79GZFl6RQb2TckfnX6JTQZWWiNTT3uqP9Cyixb+OhT9fRBqAWnjM444A==}
+    engines: {node: '>= 4.7.0'}
+    requiresBuild: true
+    dependencies:
+      dom7: 4.0.4
+      ssr-window: 4.0.2
+    dev: false
+
+  /tailwindcss-rtl/0.9.0:
+    resolution: {integrity: sha512-y7yC8QXjluDBEFMSX33tV6xMYrf0B3sa+tOB5JSQb6/G6laBU313a+Z+qxu55M1Qyn8tDMttjomsA8IsJD+k+w==}
     dev: true
 
   /tailwindcss/3.1.8_postcss@8.4.16:
@@ -1175,6 +1228,10 @@ packages:
       escalade: 3.1.1
       picocolors: 1.0.0
     dev: true
+
+  /url-polyfill/1.1.12:
+    resolution: {integrity: sha512-mYFmBHCapZjtcNHW0MDq9967t+z4Dmg5CJ0KqysK3+ZbyoNOWQHksGCTWwDhxGXllkWlOc10Xfko6v4a3ucM6A==}
+    dev: false
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -1264,6 +1321,13 @@ packages:
       vue: 3.2.39
     dev: false
 
+  /vue-plyr/7.0.0:
+    resolution: {integrity: sha512-NvbO/ZzV1IxlBQQbQlon5Sk8hKuGAj3k4k0XVdi7gM4oSqu8mZMhJ3WM3FfAtNfV790jbLnb8P3dHYqaBqIv6g==}
+    dependencies:
+      plyr: github.com/sampotts/plyr/d434c9af16e641400aaee93188594208d88f2658
+      vue: 2.7.10
+    dev: false
+
   /vue-router/4.1.5_vue@3.2.39:
     resolution: {integrity: sha512-IsvoF5D2GQ/EGTs/Th4NQms9gd2NSqV+yylxIyp/OYp8xOwxmU8Kj/74E9DTSYAyH5LX7idVUngN3JSj1X4xcQ==}
     peerDependencies:
@@ -1271,6 +1335,13 @@ packages:
     dependencies:
       '@vue/devtools-api': 6.2.1
       vue: 3.2.39
+    dev: false
+
+  /vue/2.7.10:
+    resolution: {integrity: sha512-HmFC70qarSHPXcKtW8U8fgIkF6JGvjEmDiVInTkKZP0gIlEPhlVlcJJLkdGIDiNkIeA2zJPQTWJUI4iWe+AVfg==}
+    dependencies:
+      '@vue/compiler-sfc': 2.7.10
+      csstype: 3.1.1
     dev: false
 
   /vue/3.2.39:
@@ -1332,4 +1403,16 @@ packages:
       nanoclone: 0.2.1
       property-expr: 2.0.5
       toposort: 2.0.2
+    dev: false
+
+  github.com/sampotts/plyr/d434c9af16e641400aaee93188594208d88f2658:
+    resolution: {tarball: https://codeload.github.com/sampotts/plyr/tar.gz/d434c9af16e641400aaee93188594208d88f2658}
+    name: plyr
+    version: 3.7.0
+    dependencies:
+      core-js: 3.25.5
+      custom-event-polyfill: 1.0.7
+      loadjs: 4.2.0
+      rangetouch: 2.0.1
+      url-polyfill: 1.1.12
     dev: false

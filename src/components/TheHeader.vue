@@ -150,6 +150,7 @@ import Menu from 'primevue/menu';
 import OverlayPanel from 'primevue/overlaypanel';
 import InputWithValidation from "./primeVueWithValidation/inputWithValidation.vue";
 import {mapGetters} from 'vuex';
+import { Actions } from '@/store/enums/StoreEnums';
 
 
 export default {
@@ -165,12 +166,19 @@ export default {
       isAuth: false,
       item2: [
         {
-          label: 'Router',
-          icon: 'pi pi-upload',
+          label: 'My Profile',
+          icon: 'pi pi-user',
           command: () => {
             this.$router.push('/profile')
           }
-        }
+        },
+        {
+          label: 'Log Out',
+          icon: 'pi pi-sign-out',
+          command: () => {
+           this.logOut()
+          }
+        },
       ],
       items: [
         {
@@ -192,6 +200,10 @@ export default {
     }
   },
   methods: {
+    logOut(){
+      this.$store.dispatch(Actions.LOGOUT);
+      this.$router.push({name: 'log-in'})
+    },
     toggle(event) {
       this.$refs.menu.toggle(event);
     },

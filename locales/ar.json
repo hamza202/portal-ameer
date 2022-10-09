@@ -10,5 +10,8 @@
   "first_name": "الإسم الأول",
   "enter_f_name": "ادخل الإسم الأول",
   "last_name": "الإسم الأخير",
-  "enter_l_name": "ادخل الإسم الأخير"
+  "enter_l_name": "ادخل الإسم الأخير",
+  "password_confirmation": "تأكيد كلمة المرور",
+  "password_match": "كلمة المرور غير متطابقة"
+
 }

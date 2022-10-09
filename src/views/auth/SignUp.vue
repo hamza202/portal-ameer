@@ -38,7 +38,7 @@
                         :topLabel="true"
                         icon="pi pi-user"
                         label="last_name"
-                        name="first_name"
+                        name="last_name"
                         setPlaceHolder="enter_l_name"
                         type="text"></input-with-validation>
                   </div>
@@ -77,20 +77,19 @@
                         type="password"></input-with-validation>
                   </div>
                 </div>
-                <div class="grid">
-
+                <div class="grid place-content-between mdUp:grid-flow-col">
+                  <div class="field-checkbox mb-4">
+                    <Checkbox inputId="privacy" v-model="form.privacy_policy" :binary="true"/>
+                    <label for="privacy">agree the terms and the privacy policy?</label>
+                  </div>
+                  <div class="mb-4">
+                    <router-link class="text-green-300 mb-4 transition-all ease-in-out duration-300 hover:text-green-500"
+                                 to="/log-in">
+                      I have an account
+                    </router-link>
+                  </div>
                 </div>
-                <div class="field-checkbox mb-4">
-                  <Checkbox inputId="privacy" v-model="form.privacy_policy" :binary="true"/>
-                  <label for="privacy">agree the terms and the privacy policy?</label>
-                </div>
-                <div class="mb-4">
-                  <router-link class="text-green-300 mb-4 transition-all ease-in-out duration-300 hover:text-green-500"
-                               to="/log-in">
-                    I have an account
-                  </router-link>
-                </div>
-                <button class="main-btn !px-10" type="submit">
+                <button class="main-btn !px-10 ms-5" type="submit">
                   {{ $t('sign_up') }}
                 </button>
               </div>
@@ -127,14 +126,15 @@ export default {
     async onSubmit() {
       // Clear existing errors
       await this.$store.dispatch(Actions.LOGOUT);
-      await this.$store.dispatch(Actions.LOGIN, this.form);
-      const [errorName] = Object.keys(this.$store.getters.getErrors);
-      const error = this.$store.getters.getErrors[errorName];
-      if (!error) {
+      await this.$store.dispatch(Actions.REGISTER, this.form);
+      const errorName = Object.values(this.$store.getters.getErrors);
+      if (!errorName.length) {
         this.$router.push({name: 'home'})
       } else {
-        this.$toast.add({severity: 'error', summary: 'error', detail: 'Wrong email or password', life: 3000});
-
+        for (let er of errorName){
+          console.log(errorName)
+          this.$toast.add({severity: 'error', summary: 'error', detail: er[0], life: 3000});
+        }
       }
     }
   },
@@ -148,7 +148,7 @@ export default {
         first_name: Yup.string().required().label(this.$t('first_name')),
         last_name: Yup.string().required().label(this.$t('last_name')),
         email: Yup.string().required().email().label(this.$t('email')),
-        password: requiredOrOptional.min(6).label(this.$t('password')),
+        password: requiredOrOptional.min(4).label(this.$t('password')),
         password_confirmation: requiredOrOptional.oneOf([Yup.ref('password')], this.$t('password_match')).label(this.$t('password_confirmation')),
       });
     }

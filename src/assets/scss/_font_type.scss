@@ -68,7 +68,7 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
     @layer components {
-      @apply ltr:left-0 trl:right-0
+      @apply ltr:left-0 rtl:right-0
     }
   }
   &.text-white{

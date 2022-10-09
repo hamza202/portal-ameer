@@ -71,10 +71,11 @@ class AuthModule extends VuexModule implements UserAuthInfo {
 
   @Mutation
   [Mutations.SET_AUTH](data) {
+    const userData = data.data.data
     this.isAuthenticated = true;
-    this.user = data.data;
+    this.user = userData ;
     this.errors = {};
-    JwtService.saveToken(this.user.token);
+    JwtService.saveToken(data.token || this.user.token);
   }
 
   @Mutation
@@ -99,7 +100,7 @@ class AuthModule extends VuexModule implements UserAuthInfo {
   [Actions.LOGIN](credentials) {
     return ApiService.post("auth/login", credentials)
       .then(({ data }) => {
-        this.context.commit(Mutations.SET_AUTH, data);
+        this.context.commit(Mutations.SET_AUTH, {data});
       })
       .catch(({ response }) => {
         console.log(response)
@@ -114,15 +115,26 @@ class AuthModule extends VuexModule implements UserAuthInfo {
 
   @Action
   [Actions.REGISTER](credentials) {
-    return ApiService.post("register", credentials)
+    return ApiService.post("auth/register", credentials)
       .then(({ data }) => {
-        this.context.commit(Mutations.SET_AUTH, data);
+        this.context.commit(Mutations.SET_AUTH, {data});
       })
       .catch(({ response }) => {
-        this.context.commit(Mutations.SET_ERROR, response.data.message);
+        this.context.commit(Mutations.SET_ERROR, response.data.errors);
       });
   }
-
+  @Action
+  [Actions.CHECK_USER]() {
+    let token = JwtService.getToken()
+    return ApiService.get("profile")
+        .then(({ data }) => {
+          this.context.commit(Mutations.SET_AUTH, {data , token} );
+        })
+        .catch(({ response }) => {
+          // this.context.commit(Mutations.SET_ERROR, response.data.message);
+          this.context.commit(Mutations.PURGE_AUTH);
+        });
+  }
   @Action
   [Actions.FORGOT_PASSWORD](payload) {
     return ApiService.post("forgot_password", payload)

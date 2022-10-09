@@ -69,5 +69,7 @@ module.exports = {
             none: 'none',
         },
     },
-    plugins: [],
+    plugins: [
+        require('tailwindcss-rtl'),
+    ],
 }

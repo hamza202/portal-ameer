@@ -10,5 +10,7 @@
   "first_name": "First name",
   "enter_f_name": "Enter first name",
   "last_name": "Last name",
-  "enter_l_name": "Enter last name"
+  "enter_l_name": "Enter last name",
+  "password_confirmation": "Password confirmation",
+  "password_match": "Password not match"
 }

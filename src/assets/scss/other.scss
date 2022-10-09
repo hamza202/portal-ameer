@@ -1,11 +1,5 @@
 @import "courses/style";
-.main-btn {
-  border-radius: 30px;
-  background-color: #1be5b7;
-  color: #fff;
-  padding: 5px 30px;
-  margin-top: 28px;
-}
+
 .course-page-header {
   padding: 60px 0;
   background: #092633;
@@ -41,17 +35,36 @@
         display: block;
         color: #1be5b7;
       }
-      button {
+      .course-price {
+        margin-bottom: 20px;
+        strong {
+          font-size: 20px;
+          color: #e51b1b;
+        }
+      }
+
+      .add-to-favourite-btn {
         margin: 0 10px;
-        width: 61px;
-        height: 61px;
-        background: #fff;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0;
         svg {
           width: 30px;
+        }
+        &.is_wishlist {
+          background: #fff;
+          color: red;
+          svg {
+            fill: red;
+          }
+        }
+        &.not_is_wishlist {
+          background: #2b5f76;
+          color: #fff;
         }
       }
     }
@@ -140,8 +153,14 @@
       li {
         display: flex;
         align-items: center;
+        cursor: pointer;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #f1f1f1;
+
         .icon {
           margin-right: 13px;
+          display: flex;
           svg {
             fill: #2b5f76;
             stroke: #2b5f76;
@@ -164,6 +183,20 @@
             stroke: #1be5b7;
             width: 21.3px;
             height: 24.4px;
+          }
+        }
+        &.active {
+          h5 {
+            color: #1be5b7;
+            font-weight: bold;
+          }
+          .icon {
+            margin-right: 13px;
+            display: flex;
+            svg {
+              fill: #1be5b7;
+              stroke: #1be5b7;
+            }
           }
         }
       }
@@ -217,9 +250,12 @@
   position: relative;
   img,
   video {
-    height: 400px;
+    height: 500px;
     width: 100%;
     object-fit: cover;
+  }
+  .plyr video {
+    height: 500px;
   }
   .icon-overlay {
     position: absolute;

@@ -4,29 +4,41 @@
       <div class="container-content">
         <div class="row">
           <div class="col-lg-8">
-            <div class="course-sec-video">
+            <div v-if="videoUrl && videLoadded" class="course-sec-video">
               <video-player
-                :options="{
-                  url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-                  size: 1080,
-                }"
+                :url="videoUrl"
+                :lecture-id="activeLectureId"
+                @video-end="videoEnd($event)"
               />
+            </div>
+            <div v-else class="course-sec-preview">
+              <img :src="course.base_image" alt="" />
             </div>
           </div>
           <div class="col-lg-4 position-relative">
             <div class="course-accordion">
-              <Accordion>
+              <Accordion :activeIndex="activeUnitIndex">
                 <AccordionTab
+                  v-for="(unit, unitIndex) in units"
+                  :key="unitIndex"
+                  :class="unit.id === activeUnitId ? 'active' : null"
                   ><template #header>
-                    <h4>Introduction</h4>
-                    <div class="lectures-count">3 lectures</div>
+                    <h4>{{ unit.name }}</h4>
+                    <div class="lectures-count">
+                      {{ unit.lectures.length }} lectures
+                    </div>
                   </template>
                   <ul>
-                    <li>
+                    <li
+                      v-for="(lecture, lectureIndex) in unit.lectures"
+                      :key="lectureIndex"
+                      @click="showVideo(lecture, unit, lectureIndex, unitIndex)"
+                      :class="lecture.id === activeLectureId ? 'active' : null"
+                    >
                       <div class="icon">
                         <vue-feather type="video" />
                       </div>
-                      <h5>What is Reconnaissance</h5>
+                      <h5>{{ lecture.name }}</h5>
                       <div class="play">
                         <span>play</span>
                         <vue-feather type="play" />
@@ -34,8 +46,6 @@
                     </li>
                   </ul>
                 </AccordionTab>
-                <AccordionTab header="Header II"> Content </AccordionTab>
-                <AccordionTab header="Header III"> Content </AccordionTab>
               </Accordion>
             </div>
           </div>
@@ -161,8 +171,83 @@ import VideoPlayer from "@/components/courses/VideoPlayer.vue";
 import ApiService from "@/services/ApiService";
 
 export default {
+  data() {
+    return {
+      course: {},
+      units: [],
+      videoUrl: "",
+      videLoadded: false,
+      activeLectureIndex: null,
+      activeUnitIndex: 0,
+      activeLectureId: null,
+      activeUnitId: null,
+      activeLecture: null,
+      activeUnit: null,
+      lectures: [],
+    };
+  },
   mounted() {
-    ApiService.get("courses");
+    this.getData();
+  },
+  methods: {
+    getData() {
+      ApiService.get(`courses/${this.$route.params}/show`).then((res) => {
+        this.course = res.data.data.course;
+        const units = res.data.data.course.units;
+        this.units = units;
+        this.setLectures(units);
+      });
+    },
+    showVideo(lecture, unit, lectureIndex, unitIndex) {
+      this.videLoadded = false;
+      setTimeout(() => {
+        this.videoUrl = lecture.video.url;
+        this.activeLectureIndex = lectureIndex;
+        this.activeUnitIndex = unitIndex;
+        this.activeLectureId = lecture.id;
+        this.activeUnitId = unit.id;
+        this.activeLecture = lecture;
+        this.activeUnit = unit;
+        this.videLoadded = true;
+      }, 500);
+    },
+    setLectures(units) {
+      const lectures = [];
+      for (let unitIndex = 0; unitIndex < units.length; unitIndex++) {
+        const unit = units[unitIndex];
+        for (
+          let lectureIndex = 0;
+          lectureIndex < unit.lectures.length;
+          lectureIndex++
+        ) {
+          const lecture = unit.lectures[lectureIndex];
+          lectures.push({
+            id: lecture.id,
+            video: lecture.video.url,
+            lecture: lecture,
+            unit: unit,
+            lectureIndex: lectureIndex,
+            unitIndex: unitIndex,
+          });
+        }
+      }
+      console.log(lectures);
+      this.lectures = lectures;
+    },
+    videoEnd(video) {
+      const itemIndex = this.lectures.findIndex(
+        (lecture) => lecture.id === video
+      );
+      if (itemIndex < this.lectures.length) {
+        const nextItem = this.lectures[itemIndex + 1];
+        this.showVideo(
+          nextItem.lecture,
+          nextItem.unit,
+          nextItem.lectureIndex,
+          nextItem.unitIndex
+        );
+      }
+    },
   },
   components: {
     Accordion: Accordion,

@@ -2,8 +2,8 @@
   <page-header title="courses" />
   <div class="courses-page">
     <div class="container-content">
-      <div class="row">
-        <div class="col-lg-4">
+      <div class="row justify-between">
+        <div class="col-lg-3">
           <div class="page-filters">
             <!-- <div class="page-filters-widget">
               <h3>Search</h3>
@@ -237,6 +237,17 @@
             </div> -->
           </div>
         </div>
+        <div class="col-lg-8">
+          <div class="row">
+            <div
+              v-for="(course, courseIndex) in courses"
+              :key="courseIndex"
+              class="col-lg-4"
+            >
+              <CourseCard :course="course" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -246,7 +257,7 @@
 import PageHeader from "@/components/PageHeader.vue";
 import Slider from "primevue/slider";
 import ApiService from "@/services/ApiService";
-
+import CourseCard from "@/components/courses/CourseCard.vue";
 export default {
   data() {
     return {
@@ -314,6 +325,7 @@ export default {
   components: {
     PageHeader,
     Slider,
+    CourseCard,
   },
 };
 </script>

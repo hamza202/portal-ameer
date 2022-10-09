@@ -143,6 +143,7 @@
                       <li
                         v-for="(lecture, lectureIndex) in unit.lectures"
                         :key="lectureIndex"
+                        @click="showVideo()"
                       >
                         <div class="icon">
                           <vue-feather type="video" />
@@ -276,6 +277,9 @@ export default {
     this.getData();
   },
   methods: {
+    showVideo() {
+      this.$router.push(`/courses/${this.$route.params.id}/watch`);
+    },
     getData() {
       ApiService.get(`courses/${this.$route.params.id}/show`).then((res) => {
         this.course = res.data.data.course;

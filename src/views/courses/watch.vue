@@ -138,7 +138,7 @@ export default {
   },
   methods: {
     getData() {
-      ApiService.get(`courses/${this.$route.params}/show`).then((res) => {
+      ApiService.get(`courses/${this.$route.params.id}/show`).then((res) => {
         this.course = res.data.data.course;
         const units = res.data.data.course.units;
         this.units = units;

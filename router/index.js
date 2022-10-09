@@ -46,6 +46,14 @@ const routes = [
       pageTitle: "course-details",
     },
   },
+  {
+    path: "/courses",
+    component: () => import("../src/views/courses/index.vue"),
+    meta: {
+      requiresAuth: false,
+      pageTitle: "courses",
+    },
+  },
   // {
   //     // the 404 route, when none of the above matches
   //     path: '/404',

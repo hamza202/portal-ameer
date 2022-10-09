@@ -10,22 +10,27 @@
           </div>
           <div class="col-lg-6">
             <div class="course-header-details">
-              <h5>New</h5>
+              <h5 v-if="course.flag">{{ course.flag }}</h5>
               <h1>{{ course.name }}</h1>
               <div class="course-price">
-                <strong>{{ course.price.formatted }}</strong
-                ><span></span>
+                <strong>{{ course.selling_price.formatted }}</strong
+                ><span>{{ course.price.formatted }}</span>
               </div>
               <div class="add-to-favourite">
-                <span>Owned</span>
-                <button
+                <router-link
                   v-if="course.purchased"
+                  :to="`/courses/${$route.params.id}/watch`"
                   class="btn add-to-cart main-btn"
                 >
                   Go to course
+                </router-link>
+                <button
+                  v-else
+                  class="btn add-to-cart main-btn"
+                  @click="addToCart()"
+                >
+                  Buy NOW
                 </button>
-
-                <button v-else class="btn add-to-cart main-btn">Buy NOW</button>
 
                 <button
                   :class="[
@@ -33,6 +38,7 @@
                     'add-to-favourite-btn',
                     course.is_wishlist ? 'is_wishlist' : 'not_is_wishlist',
                   ]"
+                  @click="addToWishlist()"
                 >
                   <vue-feather type="heart" />
                 </button>
@@ -192,11 +198,15 @@
                 <h3>Course instructor</h3>
                 <div class="course-page-sidebar-widget-body">
                   <div class="image">
-                    <img src="/images/user-1.png" alt="" />
+                    <img :src="course.instructor.profile_photo" alt="" />
                   </div>
-                  <h3>Ryan Sanders</h3>
-                  <span>Security Ex</span>
-                  <a href="" class="btn main-btn">MORE</a>
+                  <h3>{{ course.instructor.name }}</h3>
+                  <span>{{ course.instructor.working_field }} </span>
+                  <router-link
+                    :to="`/instructors/${course.instructor.id}`"
+                    class="btn main-btn"
+                    >MORE</router-link
+                  >
                 </div>
               </div>
               <div class="course-page-sidebar-widget theme-widget-1">
@@ -205,6 +215,40 @@
                   <h3>Book a private appointment with</h3>
                   <span>instructor</span>
                   <a href="" class="btn main-btn">Download</a>
+                </div>
+              </div>
+              <div class="course-page-sidebar-widget theme-widget-2">
+                <h3>Download Files</h3>
+                <div class="course-page-sidebar-widget-body">
+                  <ul>
+                    <li
+                      v-for="(file, fileIndex) in course.download_files"
+                      :key="fileIndex"
+                    >
+                      <a :href="file.url">
+                        <vue-feather type="download" />
+                        <span>{{ file.name }} </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="course-page-sidebar-widget theme-widget-3">
+                <h3>Certifications qualify</h3>
+                <div class="course-page-sidebar-widget-body">
+                  <ul>
+                    <li
+                      v-for="(
+                        certificate, certificateIndex
+                      ) in course.certificates"
+                      :key="certificateIndex"
+                    >
+                      <img
+                        :src="certificate.base_image || '/images/user-1.png'"
+                        :alt="certificate.company_name"
+                      />
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -238,6 +282,32 @@ export default {
         const units = res.data.data.course.units;
         this.units = units;
       });
+    },
+    addToWishlist() {
+      if (this.course.is_wishlist) {
+        ApiService.delete(`wish-lists/${this.$route.params.id}`).then((res) => {
+          this.course.is_wishlist = false;
+        });
+      } else {
+        ApiService.post(`wish-lists?course_id=${this.$route.params.id}`).then(
+          (res) => {
+            this.course.is_wishlist = true;
+          }
+        );
+      }
+    },
+    addToCart() {
+      if (this.course.is_wishlist) {
+        ApiService.delete(`cart/items/${this.$route.params.id}`).then((res) => {
+          this.course.is_wishlist = false;
+        });
+      } else {
+        ApiService.post(`cart/items?course_id=${this.$route.params.id}`).then(
+          (res) => {
+            this.course.is_wishlist = true;
+          }
+        );
+      }
     },
   },
   components: {

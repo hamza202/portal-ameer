@@ -60,47 +60,17 @@
               <div class="course-page-body-details">
                 <h2>Details</h2>
                 <p>
-                  ً Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                  ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                  nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                  ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                  nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                  ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                  nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                  sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  {{ course.description }}
                 </p>
               </div>
               <div class="course-page-body-details">
                 <h2>What you'll learn</h2>
                 <p>
-                  01 Footprinting and Reconnaissance <br />
-                  02 Scanning Networks and Enumeration <br />
-                  03 Password attacks <br />
-                  04 Web application vulnerabilities <br />
-                  05 System hacking <br />
-                  06 Wireless attacks <br />
-                  07 IOT pentesting <br />
-                  08 Malware attacks <br />
-                  09 Cloud <br />
-                  10 cryptography <br />
-                  11 Active Directory Attacks <br />
-                  12 Report Writing <br />
+                  {{ course.what_you_will_learn }}
                 </p>
               </div>
 
-              <div class="reviews">
+              <!-- <div class="reviews">
                 <h2>Reviews</h2>
                 <FiveStars size="5" themeStyle="2" stars="5" />
 
@@ -131,30 +101,7 @@
                   </li>
                 </ul>
                 <a class="more-reviews">View More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="course-page-sidebar">
-              <div class="course-page-sidebar-widget theme-widget-1">
-                <h3>Course instructor</h3>
-                <div class="course-page-sidebar-widget-body">
-                  <div class="image">
-                    <img src="/images/user-1.png" alt="" />
-                  </div>
-                  <h3>Ryan Sanders</h3>
-                  <span>Security Ex</span>
-                  <a href="" class="btn main-btn">MORE</a>
-                </div>
-              </div>
-              <div class="course-page-sidebar-widget theme-widget-1">
-                <h3>Course Syllabus</h3>
-                <div class="course-page-sidebar-widget-body">
-                  <h3>Book a private appointment with</h3>
-                  <span>instructor</span>
-                  <a href="" class="btn main-btn">Download</a>
-                </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

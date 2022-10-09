@@ -1,0 +1,493 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="arrow-right" viewBox="0 0 20 10">
+    <path
+      d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"
+    ></path>
+  </symbol>
+  <symbol id="heart" viewBox="0 0 17.466 16.123">
+    <path
+      id="Icon_ionic-md-heart-empty"
+      d="M16.038,4.5a5.166,5.166,0,0,0-3.93,1.843A5.166,5.166,0,0,0,8.178,4.5a4.748,4.748,0,0,0-4.8,4.833c0,3.338,2.968,6.017,7.465,10.148l1.268,1.142,1.268-1.142c4.5-4.131,7.465-6.81,7.465-10.148A4.748,4.748,0,0,0,16.038,4.5ZM12.645,18.326l-.176.164-.361.327-.361-.327-.176-.164A53.367,53.367,0,0,1,6.419,13.2a6.16,6.16,0,0,1-1.7-3.871,3.492,3.492,0,0,1,1-2.49,3.417,3.417,0,0,1,2.46-1,3.851,3.851,0,0,1,2.9,1.365L12.108,8.43l1.029-1.222a3.836,3.836,0,0,1,2.9-1.365,3.434,3.434,0,0,1,2.465,1,3.5,3.5,0,0,1,1,2.49A6.192,6.192,0,0,1,17.8,13.2,53.475,53.475,0,0,1,12.645,18.326Z"
+      transform="translate(-3.375 -4.5)"
+    />
+  </symbol>
+  <symbol id="light_start" viewBox="0 0 17.394 16.685">
+    <path
+      id="Icon_awesome-star"
+      d="M8.748.544,6.75,4.6l-4.47.652a.98.98,0,0,0-.542,1.671l3.234,3.152-.765,4.452a.979.979,0,0,0,1.42,1.031l4-2.1,4,2.1a.979.979,0,0,0,1.42-1.031l-.765-4.452,3.234-3.152a.98.98,0,0,0-.542-1.671L12.5,4.6,10.5.544a.98.98,0,0,0-1.756,0Z"
+      transform="translate(-0.929 0.501)"
+      fill="none"
+      stroke="#2b5f76"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1"
+      opacity="0.5"
+    />
+  </symbol>
+  <symbol id="light_clock" viewBox="0 0 12.589 12.589">
+    <g id="Icon_feather-clock" transform="translate(0.5 0.5)" opacity="0.5">
+      <path
+        id="Path_24"
+        d="M14.589,8.794A5.794,5.794,0,1,1,8.794,3,5.794,5.794,0,0,1,14.589,8.794Z"
+        transform="translate(-3 -3)"
+        fill="none"
+        stroke="#2b5f76"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_25"
+        d="M18,9v3.477l2.318,1.159"
+        transform="translate(-12.206 -6.682)"
+        fill="none"
+        stroke="#2b5f76"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+  </symbol>
+  <symbol id="light-video" viewBox="0 0 19.211 12.589">
+    <g id="Icon_feather-video" transform="translate(0.5 0.5)" opacity="0.5">
+      <path
+        id="Path_26"
+        d="M29.794,10.5,24,14.639l5.794,4.139Z"
+        transform="translate(-11.584 -8.844)"
+        fill="none"
+        stroke="#2b5f76"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_27"
+        d="M3.156,7.5h9.105a1.656,1.656,0,0,1,1.656,1.656v8.278a1.656,1.656,0,0,1-1.656,1.656H3.156A1.656,1.656,0,0,1,1.5,17.433V9.156A1.656,1.656,0,0,1,3.156,7.5Z"
+        transform="translate(-1.5 -7.5)"
+        fill="none"
+        stroke="#2b5f76"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+  </symbol>
+  <symbol id="light_trending_up" viewBox="0 0 22.66 13.003">
+    <g
+      id="Icon_feather-trending-up"
+      transform="translate(0.707 0.707)"
+      opacity="0.5"
+    >
+      <path
+        id="Path_28"
+        d="M22.746,9l-9.174,9.174L8.743,13.346,1.5,20.589"
+        transform="translate(-1.5 -9)"
+        fill="none"
+        stroke="#2b5f76"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_29"
+        d="M25.5,9h5.794v5.794"
+        transform="translate(-10.048 -9)"
+        fill="none"
+        stroke="#2b5f76"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+    <symbol id="category" viewBox="0 0 17.845 12.593">
+      <path
+        id="Union_3"
+        data-name="Union 3"
+        d="M-14826.337-12509.909h-13.247a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h13.247a.5.5,0,0,1,.5.5A.5.5,0,0,1-14826.337-12509.909Zm-15.456,0h-1.389a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h1.389a.5.5,0,0,1,.5.5A.5.5,0,0,1-14841.793-12509.909Zm15.456-3.863h-13.247a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h13.247a.5.5,0,0,1,.5.5A.5.5,0,0,1-14826.337-12513.772Zm-15.456,0h-1.389a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h1.389a.5.5,0,0,1,.5.5A.5.5,0,0,1-14841.793-12513.772Zm15.456-3.862h-13.247a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h13.247a.5.5,0,0,1,.5.5A.5.5,0,0,1-14826.337-12517.635Zm-15.456,0h-1.389a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h1.389a.5.5,0,0,1,.5.5A.5.5,0,0,1-14841.793-12517.639Zm15.456-3.863h-13.247a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h13.247a.5.5,0,0,1,.5.5A.5.5,0,0,1-14826.337-12521.5Zm-15.456,0h-1.389a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h1.389a.5.5,0,0,1,.5.5A.5.5,0,0,1-14841.793-12521.5Z"
+        transform="translate(14843.682 12522.502)"
+        fill="#1be5b7"
+      />
+    </symbol>
+  </symbol>
+  <symbol id="clock" viewBox="0 0 12.589 12.589">
+    <g
+      id="Icon_feather-clock"
+      data-name="Icon feather-clock"
+      transform="translate(0.5 0.5)"
+    >
+      <path
+        id="Path_24"
+        data-name="Path 24"
+        d="M14.589,8.794A5.794,5.794,0,1,1,8.794,3,5.794,5.794,0,0,1,14.589,8.794Z"
+        transform="translate(-3 -3)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_25"
+        data-name="Path 25"
+        d="M18,9v3.477l2.318,1.159"
+        transform="translate(-12.206 -6.682)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+  </symbol>
+  <symbol id="video" viewBox="0 0 19.211 12.589">
+    <g
+      id="Icon_feather-video"
+      data-name="Icon feather-video"
+      transform="translate(0.5 0.5)"
+    >
+      <path
+        id="Path_26"
+        data-name="Path 26"
+        d="M29.794,10.5,24,14.639l5.794,4.139Z"
+        transform="translate(-11.584 -8.844)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_27"
+        data-name="Path 27"
+        d="M3.156,7.5h9.105a1.656,1.656,0,0,1,1.656,1.656v8.278a1.656,1.656,0,0,1-1.656,1.656H3.156A1.656,1.656,0,0,1,1.5,17.433V9.156A1.656,1.656,0,0,1,3.156,7.5Z"
+        transform="translate(-1.5 -7.5)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+  </symbol>
+  <symbol id="download" viewBox="0 0 10.544 12.589">
+    <path
+      id="Icon_material-file-download"
+      data-name="Icon material-file-download"
+      d="M17.044,8.59H14.317V4.5h-4.09V8.59H7.5l4.772,4.772ZM7.5,14.725v1.363h9.544V14.725Z"
+      transform="translate(-7 -4)"
+      fill="none"
+      stroke="#1be5b7"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1"
+    />
+  </symbol>
+  <symbol id="trending" viewBox="0 0 22.66 13.003">
+    <g
+      id="Icon_feather-trending-up"
+      data-name="Icon feather-trending-up"
+      transform="translate(0.707 0.707)"
+    >
+      <path
+        id="Path_28"
+        data-name="Path 28"
+        d="M22.746,9l-9.174,9.174L8.743,13.346,1.5,20.589"
+        transform="translate(-1.5 -9)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_29"
+        data-name="Path 29"
+        d="M25.5,9h5.794v5.794"
+        transform="translate(-10.048 -9)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+  </symbol>
+  <symbol id="star" viewBox="0 0 17.394 16.685">
+    <path
+      id="Icon_awesome-star"
+      data-name="Icon awesome-star"
+      d="M8.748.544,6.75,4.6l-4.47.652a.98.98,0,0,0-.542,1.671l3.234,3.152-.765,4.452a.979.979,0,0,0,1.42,1.031l4-2.1,4,2.1a.979.979,0,0,0,1.42-1.031l-.765-4.452,3.234-3.152a.98.98,0,0,0-.542-1.671L12.5,4.6,10.5.544a.98.98,0,0,0-1.756,0Z"
+      transform="translate(-0.929 0.501)"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1"
+    />
+  </symbol>
+  <symbol id="play" viewBox="0 0 21.323 24.371">
+    <path
+      id="Icon_awesome-play"
+      data-name="Icon awesome-play"
+      d="M20.2,10.22,3.446.315A2.272,2.272,0,0,0,0,2.281V22.086a2.283,2.283,0,0,0,3.446,1.966l16.754-9.9A2.282,2.282,0,0,0,20.2,10.22Z"
+      transform="translate(0 -0.002)"
+      fill="#1be5b7"
+    />
+  </symbol>
+  <symbol id="lock" viewBox="0 0 20.889 24.371">
+    <path
+      id="Icon_open-lock-locked"
+      data-name="Icon open-lock-locked"
+      d="M10.445,0A6.984,6.984,0,0,0,3.482,6.963v3.482H0V24.371H20.889V10.445H17.408V6.963A6.984,6.984,0,0,0,10.445,0Zm0,3.482a3.448,3.448,0,0,1,3.482,3.482v3.482H6.963V6.963A3.448,3.448,0,0,1,10.445,3.482Z"
+      fill="#e51b1b"
+    />
+  </symbol>
+  <svg id="video_fill" viewBox="0 0 27 18">
+    <path
+      id="Icon_material-videocam"
+      data-name="Icon material-videocam"
+      d="M25.5,15.75V10.5A1.5,1.5,0,0,0,24,9H6a1.5,1.5,0,0,0-1.5,1.5v15A1.5,1.5,0,0,0,6,27H24a1.5,1.5,0,0,0,1.5-1.5V20.25l6,6V9.75Z"
+      transform="translate(-4.5 -9)"
+      fill="#2b5f76"
+    />
+  </svg>
+  <svg id="check" viewBox="0 0 24.67 21.011">
+    <path
+      id="Icon_material-done"
+      data-name="Icon material-done"
+      d="M13.044,23.253,7.2,18,5.967,19.446,13.5,28.5a54.551,54.551,0,0,1,7.026-11.886A52.158,52.158,0,0,1,30.637,7.489S23.464,10.63,19.18,14.833A30.26,30.26,0,0,0,13.044,23.253Z"
+      transform="translate(-5.967 -7.489)"
+      fill="#1be5b7"
+    />
+  </svg>
+  <symbol id="language" viewBox="0 0 16 16">
+    <path
+      id="Icon_material-language"
+      d="M10.992,3A8,8,0,1,0,19,11,8,8,0,0,0,10.992,3Zm5.544,4.8h-2.36a12.519,12.519,0,0,0-1.1-2.848A6.424,6.424,0,0,1,16.536,7.8ZM11,4.632A11.269,11.269,0,0,1,12.528,7.8H9.472A11.269,11.269,0,0,1,11,4.632ZM4.808,12.6a6.258,6.258,0,0,1,0-3.2h2.7A13.212,13.212,0,0,0,7.4,11a13.212,13.212,0,0,0,.112,1.6Zm.656,1.6h2.36a12.519,12.519,0,0,0,1.1,2.848A6.389,6.389,0,0,1,5.464,14.2Zm2.36-6.4H5.464A6.389,6.389,0,0,1,8.928,4.952,12.519,12.519,0,0,0,7.824,7.8ZM11,17.368A11.269,11.269,0,0,1,9.472,14.2h3.056A11.269,11.269,0,0,1,11,17.368ZM12.872,12.6H9.128A11.77,11.77,0,0,1,9,11a11.668,11.668,0,0,1,.128-1.6h3.744A11.668,11.668,0,0,1,13,11,11.77,11.77,0,0,1,12.872,12.6Zm.2,4.448a12.519,12.519,0,0,0,1.1-2.848h2.36a6.424,6.424,0,0,1-3.464,2.848ZM14.488,12.6A13.212,13.212,0,0,0,14.6,11a13.213,13.213,0,0,0-.112-1.6h2.7a6.258,6.258,0,0,1,0,3.2Z"
+      transform="translate(-3 -3)"
+      fill="#1be5b7"
+    />
+  </symbol>
+  <symbol id="date" viewBox="0 0 14.4 16">
+    <path
+      id="Icon_material-date-range"
+      d="M9.3,10.2H7.7v1.6H9.3Zm3.2,0H10.9v1.6h1.6Zm3.2,0H14.1v1.6h1.6Zm1.6-5.6h-.8V3H14.9V4.6H8.5V3H6.9V4.6H6.1A1.593,1.593,0,0,0,4.508,6.2L4.5,17.4A1.6,1.6,0,0,0,6.1,19H17.3a1.6,1.6,0,0,0,1.6-1.6V6.2A1.6,1.6,0,0,0,17.3,4.6Zm0,12.8H6.1V8.6H17.3Z"
+      transform="translate(-4.5 -3)"
+      fill="#1be5b7"
+    />
+  </symbol>
+  <svg id="phone" viewBox="0 0 36.234 36.304">
+    <path
+      id="Icon_feather-phone"
+      d="M38.4,29.43v5.314a3.543,3.543,0,0,1-3.862,3.543,35.056,35.056,0,0,1-15.287-5.438A34.543,34.543,0,0,1,8.62,22.22,35.056,35.056,0,0,1,3.182,6.862,3.543,3.543,0,0,1,6.707,3h5.314a3.543,3.543,0,0,1,3.543,3.047,22.745,22.745,0,0,0,1.24,4.978,3.543,3.543,0,0,1-.8,3.738l-2.25,2.25A28.343,28.343,0,0,0,24.386,27.64l2.25-2.25a3.543,3.543,0,0,1,3.738-.8,22.745,22.745,0,0,0,4.978,1.24A3.543,3.543,0,0,1,38.4,29.43Z"
+      transform="translate(-2.666 -2.5)"
+      fill="rgba(0,0,0,0)"
+      stroke="#1be5b7"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1"
+    />
+  </svg>
+  <symbol id="mail" viewBox="0 0 36.715 29.241">
+    <g id="Icon_feather-mail" transform="translate(0.707 0.5)">
+      <path
+        id="Path_17"
+        d="M6.53,6H34.771A3.54,3.54,0,0,1,38.3,9.53V30.711a3.54,3.54,0,0,1-3.53,3.53H6.53A3.54,3.54,0,0,1,3,30.711V9.53A3.541,3.541,0,0,1,6.53,6Z"
+        transform="translate(-3 -6)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_18"
+        d="M38.3,9,20.651,26.375,3,9"
+        transform="translate(-3 -4.036)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+  </symbol>
+  <symbol id="map_pin" viewBox="0 0 36.301 44.146">
+    <g id="Icon_feather-map-pin" transform="translate(-4 -1)">
+      <path
+        id="Path_383"
+        d="M39.8,19.151c0,13.728-17.651,25.5-17.651,25.5S4.5,32.879,4.5,19.151a17.651,17.651,0,0,1,35.3,0Z"
+        transform="translate(0 0)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_384"
+        d="M25.267,16.384A5.884,5.884,0,1,1,19.384,10.5a5.884,5.884,0,0,1,5.884,5.884Z"
+        transform="translate(2.767 2.767)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+  </symbol>
+  <symbol id="user" viewBox="0 0 15.222 17">
+    <g id="Icon_feather-user" transform="translate(0.5 0.5)">
+      <path
+        id="Path_13"
+        d="M20.222,28.518V26.512A3.8,3.8,0,0,0,16.667,22.5H9.556A3.8,3.8,0,0,0,6,26.512v2.006"
+        transform="translate(-6 -12.518)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_14"
+        d="M19.975,8.512A3.988,3.988,0,1,1,15.988,4.5,4,4,0,0,1,19.975,8.512Z"
+        transform="translate(-8.877 -4.5)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+  </symbol>
+  <symbol id="message" viewBox="0 0 17 17">
+    <path
+      id="Icon_feather-message-square"
+      d="M20.5,15.167a1.778,1.778,0,0,1-1.778,1.778H8.056L4.5,20.5V6.278A1.778,1.778,0,0,1,6.278,4.5H18.722A1.778,1.778,0,0,1,20.5,6.278Z"
+      transform="translate(-4 -4)"
+      fill="rgba(0,0,0,0)"
+      stroke="#1be5b7"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1"
+    />
+  </symbol>
+  <symbol id="facebook" viewBox="0 0 13.966 26.076">
+    <path
+      id="Icon_awesome-facebook-f"
+      d="M14.66,14.668l.724-4.719H10.856V6.886a2.36,2.36,0,0,1,2.661-2.55h2.059V.319A25.1,25.1,0,0,0,11.921,0C8.192,0,5.755,2.26,5.755,6.352v3.6H1.609v4.719H5.755V26.076h5.1V14.668Z"
+      transform="translate(-1.609)"
+      fill="#1be5b7"
+      opacity="0.6"
+    />
+  </symbol>
+  <symbol id="twitter" viewBox="0 0 26.077 21.179">
+    <path
+      id="Icon_awesome-twitter"
+      d="M23.4,8.659c.017.232.017.463.017.695A15.1,15.1,0,0,1,8.207,24.56,15.1,15.1,0,0,1,0,22.161a11.056,11.056,0,0,0,1.291.066,10.7,10.7,0,0,0,6.635-2.283,5.354,5.354,0,0,1-5-3.706,6.74,6.74,0,0,0,1.009.083,5.652,5.652,0,0,0,1.406-.182,5.345,5.345,0,0,1-4.285-5.245v-.066a5.382,5.382,0,0,0,2.416.678A5.352,5.352,0,0,1,1.82,4.357,15.191,15.191,0,0,0,12.84,9.95a6.033,6.033,0,0,1-.132-1.224,5.349,5.349,0,0,1,9.249-3.657,10.522,10.522,0,0,0,3.392-1.291A5.33,5.33,0,0,1,23,6.723,10.714,10.714,0,0,0,26.076,5.9,11.488,11.488,0,0,1,23.4,8.659Z"
+      transform="translate(0 -3.381)"
+      fill="#1be5b7"
+      opacity="0.6"
+    />
+  </symbol>
+  <symbol id="linkedin" viewBox="0 0 26.077 26.076">
+    <path
+      id="Icon_awesome-linkedin-in"
+      d="M5.837,26.077H.431V8.667H5.837ZM3.131,6.292A3.146,3.146,0,1,1,6.262,3.132,3.157,3.157,0,0,1,3.131,6.292Zm22.94,19.785H20.677V17.6c0-2.02-.041-4.61-2.811-4.61-2.811,0-3.242,2.194-3.242,4.465v8.621h-5.4V8.667h5.185v2.375h.076A5.681,5.681,0,0,1,19.6,8.231c5.472,0,6.477,3.6,6.477,8.283v9.564Z"
+      transform="translate(0 -0.001)"
+      fill="#1be5b7"
+      opacity="0.6"
+    />
+  </symbol>
+  <symbol id="youtube" viewBox="0 0 26.077 26.077">
+    <path
+      id="Icon_metro-youtube"
+      d="M10.037,1.928,8.275,5.423,6.513,1.928H4.266L7.442,7.462l.018-.011v4.256H9.09V7.451l.018.011,3.176-5.534Zm4.757,3.26A.826.826,0,0,1,15.609,6v3.26a.815.815,0,1,1-1.63,0V6a.826.826,0,0,1,.815-.815Zm0-1.63A2.452,2.452,0,0,0,12.349,6v3.26a2.445,2.445,0,1,0,4.889,0V6a2.452,2.452,0,0,0-2.445-2.445Zm7.334,0V9.974c-.711.593-1.63.951-1.63-1.162V3.558h-1.63V9.143h0c.025,1.347.309,3.773,3.257,1.8v.763h1.63V3.558Zm2.445,16.3a.816.816,0,0,0-.815.815v.815h1.63v-.815A.816.816,0,0,0,24.573,19.856Zm-7.334.815v4.278c.552.552,1.63.611,1.63-.2v-3.82C18.869,20.11,18.054,19.856,17.239,20.671Zm11.275-3.933a3.389,3.389,0,0,0-3.332-3.268c-1.777-.089-5.843-.133-9.415-.133s-7.927.044-9.7.133a3.389,3.389,0,0,0-3.332,3.268c-.107,1.913-.16,2.606-.16,3.563s.053,2.391.16,4.3a3.389,3.389,0,0,0,3.332,3.268c1.777.089,6.132.133,9.7.133s7.638-.044,9.415-.133A3.389,3.389,0,0,0,28.514,24.6q.133-2.391.133-4.3c0-1.275-.044-1.969-.133-3.563ZM7.46,26.375H5.83V18.226H4.2V16.6H9.09v1.63H7.46Zm6.519,0h-1.63v-.763c-3.1,1.739-3.232.056-3.257-1.291h0V19.856h1.63v4.49c0,.985.919.889,1.63.3V19.856h1.63ZM20.5,24.722c0,1.7-1.744,2.2-3.26.876v.777h-1.63V16.6h1.63v2.648c1.63-1.63,3.26-1.019,3.26.611Zm6.519-3.236V22.3h-3.26v1.63a.815.815,0,1,0,1.63,0v-.815h1.63v.815a2.445,2.445,0,1,1-4.889,0v-3.26a2.445,2.445,0,1,1,4.889,0Z"
+      transform="translate(-2.571 -1.928)"
+      fill="#1be5b7"
+      opacity="0.6"
+    />
+  </symbol>
+  <svg id="instagram" viewBox="0 0 28.077 28.076">
+    <g id="Icon_feather-instagram" transform="translate(1 1)">
+      <path
+        id="Path_19"
+        d="M9.519,3H22.557a6.519,6.519,0,0,1,6.519,6.519V22.557a6.519,6.519,0,0,1-6.519,6.519H9.519A6.519,6.519,0,0,1,3,22.557V9.519A6.519,6.519,0,0,1,9.519,3Z"
+        transform="translate(-3 -3)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-width="2"
+      />
+      <path
+        id="Path_20"
+        d="M22.5,16.414a5.248,5.248,0,1,1-4.422-4.422A5.248,5.248,0,0,1,22.5,16.414Z"
+        transform="translate(-4.219 -4.201)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-width="2"
+      />
+    </g>
+  </svg>
+  <symbol id="mail_2" viewBox="0 0 17.414 13.8">
+    <g id="Icon_feather-mail" transform="translate(-2.293 -5.5)">
+      <path
+        id="Path_17"
+        d="M4.6,6H17.4A1.6,1.6,0,0,1,19,7.6v9.6a1.6,1.6,0,0,1-1.6,1.6H4.6A1.6,1.6,0,0,1,3,17.2V7.6A1.6,1.6,0,0,1,4.6,6Z"
+        transform="translate(0 0)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_18"
+        d="M19,9l-8,7.875L3,9"
+        transform="translate(0 -0.75)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+  </symbol>
+  <symbol id="lock-outline" viewBox="0 0 13.051 14.39">
+    <g
+      id="Icon_feather-lock"
+      data-name="Icon feather-lock"
+      transform="translate(-4 -2.5)"
+    >
+      <path
+        id="Path_387"
+        data-name="Path 387"
+        d="M5.839,16.5h9.373a1.339,1.339,0,0,1,1.339,1.339v4.686a1.339,1.339,0,0,1-1.339,1.339H5.839A1.339,1.339,0,0,1,4.5,22.525V17.839A1.339,1.339,0,0,1,5.839,16.5Z"
+        transform="translate(0 -7.475)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+      <path
+        id="Path_388"
+        data-name="Path 388"
+        d="M10.5,9.025V6.347a3.347,3.347,0,0,1,6.695,0V9.025"
+        transform="translate(-3.322 0)"
+        fill="none"
+        stroke="#1be5b7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+      />
+    </g>
+  </symbol>
+  <symbol id="tv" viewBox="0 0 21.49 17.583">
+    <path
+      id="Icon_material-personal-video"
+      data-name="Icon material-personal-video"
+      d="M21.037,4.5H3.454A1.947,1.947,0,0,0,1.5,6.454V18.176a1.953,1.953,0,0,0,1.954,1.954H8.338v1.954h7.815V20.129h4.884a1.951,1.951,0,0,0,1.944-1.954l.01-11.722A1.953,1.953,0,0,0,21.037,4.5Zm0,13.676H3.454V6.454H21.037Z"
+      transform="translate(-1.5 -4.5)"
+      fill="#143c4e"
+      opacity="0.5"
+    />
+  </symbol>
+</svg>

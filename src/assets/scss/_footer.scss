@@ -1,0 +1,102 @@
+#footer {
+  background-color: $main-color;
+  color: $white;
+
+  .footer-info {
+    @include media-breakpoint-up(sm) {
+      max-width: 320px;
+    }
+    .big-desc{
+      font-size: 16px;
+    }
+  }
+
+  h3 {
+    @include media-breakpoint-up(xxxl) {
+      font-size: 35px;
+    }
+    font-size: 27px;
+    color: $white;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .input-container {
+    input {
+      background-color: $black-color;
+      border-color: transparent;
+      color: $white;
+
+      &:focus {
+        border-color: $second-color;
+      }
+
+      &::placeholder {
+        color: rgba($white, 0.7);
+      }
+    }
+  }
+}
+
+.footer-social-list {
+  svg {
+    path {
+      transition: all ease-out 0.3s;
+    }
+
+    width: 25px;
+    height: 25px;
+  }
+
+  a {
+    &:hover {
+      path {
+        fill: white !important;
+      }
+
+      svg #Icon_feather-instagram path {
+        fill: none !important;
+        stroke: white;
+      }
+    }
+  }
+}
+
+.footer-list {
+  margin-top: 1rem;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 0.6rem;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 18px;
+    }
+
+    a {
+      color: $white;
+
+      &:hover {
+        color: $second-color;
+      }
+    }
+  }
+}
+
+.copy-right {
+  padding: 40px 0;
+  background-color: $black-color;
+
+  p {
+    color: rgba($white, 0.5);
+  }
+
+  a {
+    color: rgba($white, 0.5);
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

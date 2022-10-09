@@ -95,23 +95,23 @@
   }
 
   .icon-container {
+    @apply ltr:ml-[15px] rtl:mr-[15px];
     --icon-size: 25px;
     position: relative;
     width: var(--icon-size);
     height: var(--icon-size);
-    margin-left: 15px;
     transition: transform 500ms ease;
 
     .icon {
+      @apply ltr:left-0 rtl:right-0 rtl:transform rtl:-scale-[1];
       position: absolute;
-      left: 0;
       top: 0;
       width: var(--icon-size);
       height: var(--icon-size);
       transition: transform 500ms ease, opacity 250ms ease;
 
       &--left {
-        transform: translateX(-200%);
+        @apply transform ltr:-translate-x-[200%] rtl:translate-x-[200%];
         opacity: 0;
       }
 
@@ -125,8 +125,8 @@
 
   &::after {
     content: "";
+    @apply ltr:left-0 rtl:right-0;
     position: absolute;
-    left: 0;
     top: 0;
     width: 100%;
     height: 100%;
@@ -140,20 +140,19 @@
     color: $main-color;
 
     &::after {
-      transform: translateX(calc(100% - 48px));
+      @apply transform ltr:translate-x-[calc(100%-48px)] rtl:translate-x-[calc(-100%+48px)];
     }
 
     .icon-container {
-      transform: translateX(125%);
-
+      @apply transform ltr:translate-x-[125%] rtl:-translate-x-[125%];
       .icon {
         &--left {
-          transform: translateX(-16px);
+          @apply transform ltr:-translate-x-[16px] rtl:translate-x-[16px];
           opacity: 1;
         }
 
         &--right {
-          transform: translateX(200%);
+          @apply transform ltr:translate-x-[200%] rtl:-translate-x-[200%];
           opacity: 0;
         }
       }
@@ -187,6 +186,7 @@
     border-color: $red-color;
     svg {
       fill: $red-color;
+      color: $red-color;
     }
   }
 }

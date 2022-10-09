@@ -89,7 +89,7 @@
                     </router-link>
                   </div>
                 </div>
-                <button class="main-btn !px-10 ms-5" type="submit">
+                <button class="main-btn !px-10" type="submit">
                   {{ $t('sign_up') }}
                 </button>
               </div>
@@ -148,7 +148,7 @@ export default {
         first_name: Yup.string().required().label(this.$t('first_name')),
         last_name: Yup.string().required().label(this.$t('last_name')),
         email: Yup.string().required().email().label(this.$t('email')),
-        password: requiredOrOptional.min(4).label(this.$t('password')),
+        password: requiredOrOptional.min(8).label(this.$t('password')),
         password_confirmation: requiredOrOptional.oneOf([Yup.ref('password')], this.$t('password_match')).label(this.$t('password_confirmation')),
       });
     }

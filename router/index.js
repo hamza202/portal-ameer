@@ -1,11 +1,19 @@
 import { createRouter, createWebHistory } from "vue-router";
 import store from "@/store";
-import { Mutations, Actions } from "@/store/enums/StoreEnums";
+import { Actions } from "@/store/enums/StoreEnums";
 import JwtService from "@/services/JwtService";
 
 const routes = [
   {
     path: "/",
+    redirect: '/home',
+    meta: {
+      requiresAuth: false,
+      pageTitle: "home",
+    },
+  },
+  {
+    path: "/home",
     name: "home",
     component: () => import("../src/views/Home.vue"),
     meta: {
@@ -34,7 +42,7 @@ const routes = [
     path: "/courses/:id",
     component: () => import("../src/views/courses/CourseDetails.vue"),
     meta: {
-      requiresAuth: false,
+      requiresAuth: true,
       pageTitle: "course-details",
     },
   },
@@ -42,7 +50,7 @@ const routes = [
     path: "/courses/:id/watch",
     component: () => import("../src/views/courses/watch.vue"),
     meta: {
-      requiresAuth: false,
+      requiresAuth: true,
       pageTitle: "course-details",
     },
   },
@@ -50,7 +58,7 @@ const routes = [
     path: "/courses",
     component: () => import("../src/views/courses/index.vue"),
     meta: {
-      requiresAuth: false,
+      requiresAuth: true,
       pageTitle: "courses",
     },
   },
@@ -76,10 +84,13 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach(() => {
+router.beforeResolve(to => {
   // reset config to initial state
   store.dispatch(Actions.VERIFY_AUTH, { api_token: JwtService.getToken() });
-
+  const loggedIn = JwtService.getToken()
+  if (to.meta.requiresAuth && !loggedIn) {
+    router.push('/log-in')
+  }
   // Scroll page to top on every route change
   setTimeout(() => {
     window.scrollTo(0, 0);

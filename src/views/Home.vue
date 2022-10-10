@@ -220,10 +220,13 @@
     <!--Start labs Section-->
 
     <!--Start My Course Price-->
-    <section>
+    <section v-if="my_course.length" class="section-padding pb-0">
       <div class="container-content">
-        <div class="row g-3 row-cols-xxl-4 row-cols-xl-3 row-cols-md-2 row-cols-1">
-          <div class="col" v-for="(course, idx) in my_course" :key="idx">
+        <h2 class="sub-title">
+          My Courses
+        </h2>
+        <div class="row g-3 row-cols-xxl-4 row-cols-xl-3 row-cols-md-2 row-cols-1 mt-4">
+          <div v-for="(course, idx) in my_course" :key="idx" class="col">
             <CourseCard :course="course"></CourseCard>
           </div>
         </div>
@@ -231,6 +234,33 @@
     </section>
     <!--Start My Course Price-->
 
+    <section v-if="instructors.length" class="section-padding">
+      <div class="container-content">
+        <div class="row g-4 row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1">
+          <div v-for="(instructor, idx) in instructors" :key="idx" class="col">
+            <div class="instructors-card border position-relative">
+              <div class="instructors-lessons d-flex justify-center inline">
+                <svg class="me-2" height="24px" viewBox="0 0 21.49 17.583" width="24px"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path id="Icon_material-personal-video" d="M21.037,4.5H3.454A1.947,1.947,0,0,0,1.5,6.454V18.176a1.953,1.953,0,0,0,1.954,1.954H8.338v1.954h7.815V20.129h4.884a1.951,1.951,0,0,0,1.944-1.954l.01-11.722A1.953,1.953,0,0,0,21.037,4.5Zm0,13.676H3.454V6.454H21.037Z"
+                        data-name="Icon material-personal-video"
+                        fill="#143c4e" opacity="0.5" transform="translate(-1.5 -4.5)"/>
+                </svg>
+                <p class="big-desc">{{ instructor.courses_count }}</p>
+              </div>
+              <div class="instructors-inner text-center">
+                <img alt="user" class="mb-3" :src="instructor.base_image || '/images/user-d.webp'">
+                <h3 class="title-2 mb-2 text-uppercase fw-500">{{instructor.name}}</h3>
+                <h4 class="title-3 mb-3 text-uppercase fw-400">{{instructor.working_field}}</h4>
+                <a aria-label="team" class="text-uppercase main-btn px-4" href="javascript:void(0)">
+                  MORE
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </div>
 </template>
@@ -243,6 +273,7 @@ import 'swiper/css/navigation';
 import Knob from 'primevue/knob';
 import ApiService from "@/services/ApiService";
 import CourseCard from "@/components/courses/CourseCard.vue";
+import store from "@/store/index";
 
 
 export default {
@@ -272,19 +303,37 @@ export default {
       showSwiper: true,
       educational_paths: [],
       labs: [],
-      my_course:[],
+      my_course: [],
+      instructors: [],
+      isAuth: false
     }
   },
+  methods: {
+    async getDataIfAuth() {
+      await store
+      this.isAuth = this.$store.getters.isUserAuthenticated;
+      if (this.isAuth) {
+        ApiService.get('my-courses').then((res) => {
+          this.my_course = res.data.data.courses;
+        })
+        ApiService.get('learning-paths/statistics').then((res) => {
+          this.educational_paths = res.data.data;
+        })
+      }
+
+    }
+  },
+  mounted() {
+  },
   created() {
-    ApiService.get('learning-paths/statistics').then((res) => {
-      this.educational_paths = res.data.data;
-    })
     ApiService.get('labs').then((res) => {
       this.labs = res.data.data;
     })
-    ApiService.get('my-courses').then((res) => {
-      this.my_course = res.data.data.courses;
+    ApiService.get('instructors').then((res) => {
+      this.instructors = res.data.data;
+      console.log(this.instructors)
     })
+    this.getDataIfAuth();
   }
 
 };

@@ -1,6 +1,6 @@
 <template>
   <div  class="course-card r-20px">
-    <button class="add-fav-button" :class="{'active': isWish}">
+    <button class="add-fav-button" :class="{'active': isWish}" @click="addToWishlist()">
       <vue-feather type="heart"/>
 
     </button>
@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import ApiService from "@/services/ApiService";
+
 export default {
   name: "CourseCard",
   props: {
@@ -82,6 +84,21 @@ export default {
     return {
       isWish: null
     }
+  },
+  methods:{
+    addToWishlist() {
+      if (this.isWish) {
+        ApiService.delete(`wish-lists/${this.course.id}`).then((res) => {
+          this.isWish = false;
+        });
+      } else {
+        ApiService.post(`wish-lists?course_id=${this.course.id}`).then(
+            (res) => {
+              this.isWish = true;
+            }
+        );
+      }
+    },
   },
   mounted() {
     this.isWish = this.course.is_wishlist

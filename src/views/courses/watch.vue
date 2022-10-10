@@ -180,6 +180,14 @@ export default {
       }
       console.log(lectures);
       this.lectures = lectures;
+      if (lectures.length) {
+        this.showVideo(
+          lectures[0].lecture,
+          lectures[0].unit,
+          lectures[0].lectureIndex,
+          lectures[0].unitIndex
+        );
+      }
     },
     videoEnd(video) {
       const itemIndex = this.lectures.findIndex(

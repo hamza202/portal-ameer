@@ -258,6 +258,7 @@
       </div>
     </div>
   </div>
+  <LoadingContent v-else />
 </template>
 
 <script>
@@ -265,7 +266,7 @@ import Accordion from "primevue/accordion";
 import AccordionTab from "primevue/accordiontab";
 import FiveStars from "@/components/FiveStars.vue";
 import ApiService from "@/services/ApiService";
-
+import LoadingContent from "@/components/LoadingContent.vue";
 export default {
   data() {
     return {
@@ -318,6 +319,7 @@ export default {
     Accordion: Accordion,
     AccordionTab: AccordionTab,
     FiveStars,
+    LoadingContent,
   },
 };
 </script>

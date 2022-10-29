@@ -1,7 +1,7 @@
 <template>
   <div oncontextmenu="return false;">
     <vue-plyr ref="plyr">
-      <video controls crossorigin playsinline autoplay data-poster="poster.jpg">
+      <video controls playsinline autoplay :data-poster="image">
         <source :size="1080" :src="url" type="video/mp4" />
       </video>
     </vue-plyr>
@@ -18,6 +18,13 @@ export default {
         return "";
       },
     },
+    image: {
+      type: String,
+      default() {
+        return "";
+      },
+    },
+
     lectureId: {
       type: null,
       default() {

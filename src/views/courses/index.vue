@@ -289,15 +289,31 @@ export default {
     };
   },
   mounted() {
-    this.getData();
     this.getSelectData("categories");
+    this.searchParams();
+    console.log(this.$route);
   },
   methods: {
+    searchParams() {
+      let params = this.$route.query;
+      let category = params.category;
+      let level = params.level;
+      let from_price = params.from_price;
+      let to_price = params.to_price;
+      if (category || level || from_price || to_price) {
+        this.category = category;
+        this.level = level;
+        this.price = [from_price || 0, to_price || 1000];
+        this.changeFilter("all");
+      } else {
+        this.getData("");
+      }
+    },
     sliderEnd($event) {
       this.changeFilter("price");
     },
     getData(params) {
-      ApiService.get(`courses?` + params).then((res) => {
+      ApiService.get(`courses` + (params ? `?${params}` : "")).then((res) => {
         this.courses = res.data.data.courses;
       });
     },
@@ -309,11 +325,12 @@ export default {
       if (this.level) {
         params += `level=${this.level}&`;
       }
-      if (mode === "price") {
+      if (mode === "price" || mode === "all") {
         params += `from_price=${this.price[0]}&`;
         params += `to_price=${this.price[1]}&`;
       }
       this.params = params;
+      console.log(params);
       this.getData(params);
     },
     getSelectData(api) {

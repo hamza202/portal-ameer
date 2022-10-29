@@ -7,6 +7,7 @@
             <div v-if="videoUrl && videLoadded" class="course-sec-video">
               <video-player
                 :url="videoUrl"
+                :image="course.base_image"
                 :lecture-id="activeLectureId"
                 @video-end="videoEnd($event)"
               />

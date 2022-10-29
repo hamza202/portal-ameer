@@ -236,6 +236,7 @@
 
     <section v-if="instructors.length" class="section-padding">
       <div class="container-content">
+        <h2 class="sub-title"> instructors </h2>
         <div class="row g-4 row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-1 row-cols-1">
           <div v-for="(instructor, idx) in instructors" :key="idx" class="col">
             <div class="instructors-card border position-relative">
@@ -251,7 +252,7 @@
               <div class="instructors-inner text-center">
                 <img alt="user" class="mb-3" :src="instructor.base_image || '/images/user-d.webp'">
                 <h3 class="title-2 mb-2 text-uppercase fw-500">{{instructor.name}}</h3>
-                <h4 class="title-3 mb-3 text-uppercase fw-400">{{instructor.working_field}}</h4>
+                <h4 class="desc-big mb-3 text-uppercase fw-400">{{instructor.working_field}}</h4>
                 <a aria-label="team" class="text-uppercase main-btn px-4" href="javascript:void(0)">
                   MORE
                 </a>

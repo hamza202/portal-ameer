@@ -421,9 +421,8 @@ html[dir='rtl']{
 .instructors-card {
   border-radius: var(--stander-border-radius);
   background-color: $white;
-  padding: 10px 20px;
+  padding: 20px;
   display: flex;
-  align-items: center;
   justify-content: center;
   min-height: 315px;
   border-color: $dark-gray-bg !important;
@@ -434,6 +433,7 @@ html[dir='rtl']{
       height: 130px;
       border-radius: 50%;
       object-fit: cover;
+      display: inline;
     }
   }
 }

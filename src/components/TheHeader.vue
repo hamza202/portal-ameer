@@ -2,7 +2,7 @@
   <header>
     <div class="main-header-menu">
       <div class="container-content">
-        <Menubar ref="menuBar" :model="items" class="bg-white-100 border-0 py-6">
+        <Menubar ref="menuBar" :model="headerItems" class="bg-white-100 border-0 py-6">
           <template #start>
             <router-link class="logo" to="/">
               <img alt="logo" class="md:block hidden" src="/images/logo.svg">
@@ -132,12 +132,11 @@
       <div class="container-content">
         <Menubar ref="menuBar" :model="items" class="bg-gray-900 border-0 py-0">
           <template #item="{item}">
-            <router-link v-slot="{href, navigate, isActive, isExactActive}" :to="item.to" custom>
-              <a :class="{'active-link': isActive, 'active-link-exact': isExactActive}" :href="href"
-                 @click="navigate, closeMenu()">{{ $t(item.label) }}</a>
+            <router-link v-slot="{href, navigate, isActive, isExactActive}" :to="`/courses/${item.id}/watch`" >
+              <span :class="{'active-link': isActive, 'active-link-exact': isExactActive}"
+                 @click="navigate, closeMenu()">{{ $t(item.name) }}</span>
             </router-link>
           </template>
-
         </Menubar>
       </div>
     </div>
@@ -151,6 +150,7 @@ import OverlayPanel from 'primevue/overlaypanel';
 import InputWithValidation from "./primeVueWithValidation/inputWithValidation.vue";
 import {mapGetters} from 'vuex';
 import { Actions } from '@/store/enums/StoreEnums';
+import ApiService from "@/services/ApiService";
 
 
 export default {
@@ -176,20 +176,17 @@ export default {
           label: 'Log Out',
           icon: 'pi pi-sign-out',
           command: () => {
-           this.logOut()
+            this.logOut()
           }
         },
       ],
-      items: [
+      headerItems: [
         {
           label: 'home',
           to: '/'
         },
-        {
-          label: 'Quit',
-          to: '/log-in'
-        }
-      ]
+      ],
+      items:[]
     }
   },
   watch:{
@@ -212,15 +209,20 @@ export default {
     },
     searchToggle(event) {
       this.$refs.search.toggle(event);
-      console.log(this.$refs.menuBar);
-
     },
     closeMenu() {
       document.body.click();
     },
   },
+  mounted() {
+
+  },
   created() {
     this.isAuth = this.isAuthGet
+    ApiService.get('categories/tree').then((res) => {
+      this.items = res.data.data
+      console.log(this.items)
+    })
   },
   computed: {
     ...mapGetters({

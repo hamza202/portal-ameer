@@ -34,7 +34,9 @@
           text-transform: uppercase;
           transition: all ease-out 0.3s;
           font-weight: 500;
-
+          &:hover{
+            color: $second-color;
+          }
           &.active-link {
             color: $title-color;
           }

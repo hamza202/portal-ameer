@@ -70,6 +70,14 @@ const routes = [
       pageTitle: "profile",
     },
   },
+  {
+    path: "/wish-lists",
+    component: () => import("../src/views/WishLists.vue"),
+    meta: {
+      requiresAuth: true,
+      pageTitle: "Wish Lists",
+    },
+  },
   // {
   //     // the 404 route, when none of the above matches
   //     path: '/404',

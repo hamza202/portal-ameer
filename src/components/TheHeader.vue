@@ -55,7 +55,7 @@
                 </OverlayPanel>
               </div>
               <div>
-                <router-link class="menu-btn" to="/">
+                <router-link class="menu-btn" to="/wish-lists">
                   <svg
                     height="16.123"
                     viewBox="0 0 17.466 16.123"
@@ -314,6 +314,11 @@ export default {
           label: "home",
           to: "/",
         },
+        {
+          label: "courses",
+          to: "/courses",
+
+        }
       ],
       items:[]
     }

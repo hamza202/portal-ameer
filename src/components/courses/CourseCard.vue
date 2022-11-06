@@ -78,6 +78,10 @@ export default {
       default: () => {
         return {}
       }
+    },
+    splice:{
+      type:Boolean,
+      default: false
     }
   },
   data() {
@@ -91,6 +95,9 @@ export default {
         ApiService.delete(`wish-lists/${this.course.id}`).then((res) => {
           this.isWish = false;
         });
+        if (this.splice){
+          this.$emit('remove-fave', this.course.id)
+        }
       } else {
         ApiService.post(`wish-lists?course_id=${this.course.id}`).then(
             (res) => {

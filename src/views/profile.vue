@@ -184,7 +184,6 @@ export default {
       if (input.files && input.files[0]) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          console.log(input.files[0])
           this.imagePrev = e.target.result;
           this.form.profile_photo = input.files[0]
         };
@@ -206,7 +205,6 @@ export default {
     },
     onSubmit() {
       this.loading = true;
-      console.log(this.dateFormatter(this.form.birthday))
       let url = 'profile/update',
           form = JSON.parse(JSON.stringify(this.form))
       delete form.profile_photo;

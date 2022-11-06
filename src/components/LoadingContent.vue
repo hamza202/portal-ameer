@@ -1,7 +1,7 @@
 <template>
   <div class="loading-content text-center">
     <LoadingOne />
-    <h2>... جاري تحميل المحتوى</h2>
+    <h2>{{$t('loading')}}</h2>
   </div>
 </template>
 

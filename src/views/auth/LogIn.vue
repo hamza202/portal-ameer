@@ -25,7 +25,8 @@
                     v-model="form.email"
                     :TPlaceHolder="false"
                     setPlaceHolder="example@email.com"
-                    icon="pi pi-envelope"></input-with-validation>
+                    icon="pi pi-envelope">
+                </input-with-validation>
                 <input-with-validation
                     label="password"
                     :topLabel="true"
@@ -84,7 +85,6 @@ export default {
       return Yup.object().shape({
         email: Yup.string().required().email().label(this.$t('email')),
         password: Yup.string().required().label(this.$t('password')),
-
       });
     }
   },

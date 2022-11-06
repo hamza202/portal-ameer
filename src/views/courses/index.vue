@@ -291,7 +291,6 @@ export default {
   mounted() {
     this.getSelectData("categories");
     this.searchParams();
-    console.log(this.$route);
   },
   methods: {
     searchParams() {

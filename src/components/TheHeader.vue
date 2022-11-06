@@ -261,7 +261,7 @@
       <div class="container-content">
         <Menubar ref="menuBar" :model="items" class="bg-gray-900 border-0 py-0">
           <template #item="{item}">
-            <router-link v-slot="{href, navigate, isActive, isExactActive}" :to="`/courses/${item.id}/watch`" >
+            <router-link v-slot="{href, navigate, isActive, isExactActive}" :to="`/courses/${item.id}`" >
               <span :class="{'active-link': isActive, 'active-link-exact': isExactActive}"
                  @click="navigate, closeMenu()">{{ $t(item.name) }}</span>
             </router-link>
@@ -351,7 +351,6 @@ export default {
     this.isAuth = this.isAuthGet
     ApiService.get('categories/tree').then((res) => {
       this.items = res.data.data
-      console.log(this.items)
     })
   },
   computed: {

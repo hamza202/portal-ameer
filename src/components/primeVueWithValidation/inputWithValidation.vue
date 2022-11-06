@@ -1,7 +1,7 @@
 <template>
   <div class="field">
     <label v-if="lang && topLabel" for="name">{{ `${$t(label)} ${$t("in")} ${$t(lang)}` }}</label>
-    <label v-else-if="topLabel" for="name">{{ `${$t(label)}` }} <span v-if="isRequired" class="text-red-100 !inline">*</span></label>
+    <label v-else-if="topLabel" for="name">{{labelText}} <span v-if="isRequired" class="text-red-100 !inline">*</span></label>
     <span :class="{'p-input-icon-left w-full':icon}">
       <i v-if="icon" :class="icon"/>
     <InputText
@@ -28,6 +28,7 @@
 <script>
 import {defineComponent} from 'vue';
 import {useField} from 'vee-validate';
+import i18n from "@/plugin/i18n.js";
 
 export default defineComponent({
   props: {
@@ -84,6 +85,12 @@ export default defineComponent({
         }
       }
       return this.$t(this.label)
+    },
+    labelText(){
+      if(i18n.global.te(this.label)){
+        return this.$t(this.label)
+      }
+      return this.label
     }
   }
 })

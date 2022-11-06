@@ -6,6 +6,7 @@ specifiers:
   autoprefixer: ^10.4.12
   axios: ^0.21.4
   feather-icons: '4'
+  moment: ^2.29.1
   postcss: ^8.4.16
   primeicons: ^6.0.1
   primevue: ^3
@@ -31,6 +32,7 @@ specifiers:
 dependencies:
   axios: 0.21.4
   feather-icons: 4.29.0
+  moment: 2.29.4
   primeicons: 6.0.1
   primevue: 3.17.0_sdqc6lvpp5fksjjzbbnroqp2wi
   swiper: 8.4.3
@@ -921,6 +923,10 @@ packages:
   /minimist/1.2.6:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
+
+  /moment/2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}

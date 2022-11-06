@@ -12,6 +12,15 @@
   "last_name": "الإسم الأخير",
   "enter_l_name": "ادخل الإسم الأخير",
   "password_confirmation": "تأكيد كلمة المرور",
-  "password_match": "كلمة المرور غير متطابقة"
-
+  "password_match": "كلمة المرور غير متطابقة",
+  "name":"الاسم",
+  "mobile": "رقم الهاتف",
+  "birthday": "تاريخ الميلاد",
+  "save": "حفظ",
+  "loading": "جاري تحميل المحتوى...",
+  "enter_facebook_link": "ادخل رابط الفيسبوك",
+  "links": "الروابط",
+  "enter_twitter_link": "ادخل رابط تويتر",
+  "enter_linkedin_link": "ادخل رابط لينكد ان",
+  "enter_website_link": "ادخل رابط موقعك الإلكتروني"
 }

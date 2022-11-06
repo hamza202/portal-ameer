@@ -15,6 +15,7 @@ import i18n from "./plugin/i18n.js";
 import { createMetaManager } from "vue-meta";
 const metaManager = createMetaManager();
 import { globalComponents } from "./components/GlobalComponents";
+import shared from "@/mixins/shared.js";
 import VueFeather from "vue-feather";
 
 //Start vee-validate
@@ -40,6 +41,8 @@ app.component("FieldValidate", Field);
 app.component("FormValidate", Form);
 app.component("ErrorMessage", ErrorMessage);
 globalComponents(app);
+
+app.mixin(shared)
 
 //Route
 import router from "../router/index.js";

@@ -23,7 +23,7 @@ class ApiService {
     public static setHeader(): void {
         axios.defaults.headers.common['Authorization'] = `Bearer ${JwtService.getToken()}`;
         axios.defaults.headers.common['Accept'] = 'application/json';
-        axios.defaults.headers.common['Accept-Language'] = window.localStorage.getItem('lang');
+        axios.defaults.headers.common['Accept-Locale'] = window.localStorage.getItem('lang');
     }
 
     /**
@@ -66,8 +66,8 @@ class ApiService {
      * @param params: AxiosRequestConfig
      * @returns Promise<AxiosResponse>
      */
-    public static update(resource: string, slug: string, params: AxiosRequestConfig): Promise<AxiosResponse> {
-        return axios.put(`${resource}/${slug}`, params);
+    public static update(resource: string, params: AxiosRequestConfig): Promise<AxiosResponse> {
+        return axios.put(`${resource}`, params);
     }
 
 

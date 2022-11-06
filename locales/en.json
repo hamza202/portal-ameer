@@ -12,5 +12,15 @@
   "last_name": "Last name",
   "enter_l_name": "Enter last name",
   "password_confirmation": "Password confirmation",
-  "password_match": "Password not match"
+  "password_match": "Password not match",
+  "name":"Name",
+  "mobile": "Mobile",
+  "birthday": "Birthday",
+  "save": "Save",
+  "loading": "Loading...",
+  "enter_facebook_link": "Enter facebook ink",
+  "links": "LINKS",
+  "enter_twitter_link": "Enter twitter ink",
+  "linkedin": "Enter linkedin ink",
+  "enter_website_link": "Enter website link"
 }

@@ -25,6 +25,7 @@ specifiers:
   vue-meta: 3.0.0-alpha.10
   vue-plyr: ^7.0.0
   vue-router: '4'
+  vue3-tel-input: ^1.0.4
   vuex: ^4.0.2
   vuex-module-decorators: ^1.0.1
   yup: ^0.32.8
@@ -45,6 +46,7 @@ dependencies:
   vue-meta: 3.0.0-alpha.10_vue@3.2.39
   vue-plyr: 7.0.0
   vue-router: 4.1.5_vue@3.2.39
+  vue3-tel-input: 1.0.4
   vuex: 4.0.2_vue@3.2.39
   vuex-module-decorators: 1.2.0_vue@3.2.39+vuex@4.0.2
   yup: 0.32.11
@@ -886,6 +888,10 @@ packages:
       semver: 6.3.0
     dev: true
 
+  /libphonenumber-js/1.10.14:
+    resolution: {integrity: sha512-McGS7GV/WjJ2KjfOGhJU1oJn29RYeo7Q+RpANRbUNMQ9gj5XArpbjurSuyYPTejFwbaUojstQ4XyWCrAzGOUXw==}
+    dev: false
+
   /lilconfig/2.0.6:
     resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
     engines: {node: '>=10'}
@@ -1239,6 +1245,10 @@ packages:
     resolution: {integrity: sha512-mYFmBHCapZjtcNHW0MDq9967t+z4Dmg5CJ0KqysK3+ZbyoNOWQHksGCTWwDhxGXllkWlOc10Xfko6v4a3ucM6A==}
     dev: false
 
+  /user/0.0.0:
+    resolution: {integrity: sha512-eRNM5isOvr6aEFAGi1CqAkmLkYxW2NJ5ThhbD+6IJXYKM1mo7Gtxx4mQIveHz/5K3p/SVnlW9k17ETn+QAu8IQ==}
+    dev: false
+
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
@@ -1358,6 +1368,15 @@ packages:
       '@vue/runtime-dom': 3.2.39
       '@vue/server-renderer': 3.2.39_vue@3.2.39
       '@vue/shared': 3.2.39
+
+  /vue3-tel-input/1.0.4:
+    resolution: {integrity: sha512-C60OyAq5ORDErSJ4x7UmJJbF95CDncMswnySmAUtbuBP0pcVcJBu6DOTxKquykvTbJEh9I73DXyqMtDxtLrwJg==}
+    dependencies:
+      core-js: 3.25.5
+      libphonenumber-js: 1.10.14
+      user: 0.0.0
+      vue: 3.2.39
+    dev: false
 
   /vuex-module-decorators/1.2.0_vue@3.2.39+vuex@4.0.2:
     resolution: {integrity: sha512-3lHp75qVgrNXUpFKs4J4eRnrxjY3BYUkHwR+ZKvvIycw/7tDwlL0RPuiYLwrHEUBTvJePSZaehZJ0BMTw1/ugQ==}

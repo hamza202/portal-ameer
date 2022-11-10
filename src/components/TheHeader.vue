@@ -77,71 +77,52 @@
                   <span
                     class="bg-red-100 rounded-full flex items-center justify-center w-6 h-6 text-white-100 text-xs font-semibold absolute -top-3 ltr:-right-3 rtl:-left-3"
                   >
-                    2
+                    {{myCart.quantity}}
                   </span>
                   <em class="pi pi-shopping-cart"></em>
                 </button>
                 <OverlayPanel ref="cart">
-                  <ul class="list-none cart-drop-lst">
-                    <li class="grid max-w-[250px] grid-flow-col gap-3">
-                      <div class="cart-drop-lst-img">
-                        <img
-                          alt="cart img"
-                          class="w-16 h-auto rounded-lg"
-                          src="/images/cart-icon.jpg"
-                        />
-                      </div>
-                      <div>
-                        <p class="desc font-semibold text-green-100">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Amet assumenda cumque deserunt ea ex explicabo,
-                          facilis ipsum molestiae nemo nostrum possimus qui quia
-                          quod rem rerum saepe vel voluptas voluptatibus!
-                        </p>
-                        <p
-                          class="head-font text-red-100 text-base font-medium head-font"
-                        >
-                          $25.00
-                          <span
-                            class="line-through text-green-100 opacity-30 ltr:pl-1 rtl:pr-1 text-sm"
-                            >$40.00</span
+                  <div  v-if="myCart.items.length">
+                    <ul class="list-none cart-drop-lst">
+                      <li class="grid max-w-[250px] grid-flow-col gap-3 justify-start" v-for="item in myCart.items" :key="item.id">
+                        <div class="cart-drop-lst-img w-16">
+                          <img
+                              alt="cart img"
+                              class="w-16 h-auto rounded-lg"
+                              :src="item.course.base_image"
+                          />
+                        </div>
+                        <div class="max-w-[170px]">
+                          <p class="desc font-semibold text-green-100" :title="item.course.name">
+                            {{item.course.name}}
+                          </p>
+                          <p
+                              class="head-font text-red-100 text-base font-medium head-font"
                           >
-                        </p>
-                      </div>
-                    </li>
-                    <li class="grid max-w-[250px] grid-flow-col gap-3">
-                      <div class="cart-drop-lst-img">
-                        <img
-                          alt="cart img"
-                          class="w-16 h-auto rounded-lg"
-                          src="/images/cart-icon.jpg"
-                        />
-                      </div>
-                      <div>
-                        <p class="desc font-semibold text-green-100">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Amet assumenda cumque deserunt ea ex explicabo,
-                          facilis ipsum molestiae nemo nostrum possimus qui quia
-                          quod rem rerum saepe vel voluptas voluptatibus!
-                        </p>
-                        <p
-                          class="head-font text-red-100 text-base font-medium head-font"
-                        >
-                          $25.00
-                          <span
-                            class="line-through text-green-100 opacity-30 ltr:pl-1 rtl:pr-1 text-sm"
-                            >$40.00</span
-                          >
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
-                  <router-link
-                    class="text-center block font-semibold main-link"
-                    to="/"
-                  >
-                    View All
-                  </router-link>
+                            {{item.unitPrice.formatted}}
+                            <span
+                                class="line-through text-green-100 opacity-30 ltr:pl-1 rtl:pr-1 text-sm"
+                            >
+                               {{item.total.formatted}}
+                            </span
+                            >
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                    <router-link
+                        class="text-center block font-semibold main-link"
+                        to="/cart" @click="closeCart()"
+                    >
+                      View All
+                    </router-link>
+                  </div>
+                  <div v-else>
+                      <h3 class="text-center font-semibold text-green-200 min-w-[250px] py-3.5 px-1.5">
+                          No Items In Cart
+                      </h3>
+                  </div>
+
                 </OverlayPanel>
               </div>
               <div>
@@ -261,9 +242,9 @@
       <div class="container-content">
         <Menubar ref="menuBar" :model="items" class="bg-gray-900 border-0 py-0">
           <template #item="{item}">
-            <router-link v-slot="{href, navigate, isActive, isExactActive}" :to="`/courses/${item.id}`" >
-              <span :class="{'active-link': isActive, 'active-link-exact': isExactActive}"
-                 @click="navigate, closeMenu()">{{ $t(item.name) }}</span>
+            <router-link custom v-slot="{href, navigate, isActive, isExactActive}" :to="`/courses`" >
+              <a :href="href" :class="{'active-link': isActive, 'active-link-exact': isExactActive}"
+                 @click="navigate">{{ item.label }}</a>
             </router-link>
           </template>
         </Menubar>
@@ -320,7 +301,131 @@ export default {
 
         }
       ],
-      items:[]
+      items: [
+        {
+          label:'File',
+          icon:'pi pi-fw pi-file',
+          items:[
+            {
+              label:'New',
+              icon:'pi pi-fw pi-plus',
+              items:[
+                {
+                  label:'Bookmark',
+                  icon:'pi pi-fw pi-bookmark'
+                },
+                {
+                  label:'Video',
+                  icon:'pi pi-fw pi-video'
+                }
+              ]
+            },
+            {
+              label:'Delete',
+              icon:'pi pi-fw pi-trash'
+            },
+            {
+              separator:true
+            },
+            {
+              label:'Export',
+              icon:'pi pi-fw pi-external-link'
+            }
+          ]
+        },
+        {
+          label:'Edit',
+          icon:'pi pi-fw pi-pencil',
+          items:[
+            {
+              label:'Left',
+              icon:'pi pi-fw pi-align-left'
+            },
+            {
+              label:'Right',
+              icon:'pi pi-fw pi-align-right'
+            },
+            {
+              label:'Center',
+              icon:'pi pi-fw pi-align-center'
+            },
+            {
+              label:'Justify',
+              icon:'pi pi-fw pi-align-justify'
+            }
+          ]
+        },
+        {
+          label:'Users',
+          icon:'pi pi-fw pi-user',
+          items:[
+            {
+              label:'New',
+              icon:'pi pi-fw pi-user-plus',
+
+            },
+            {
+              label:'Delete',
+              icon:'pi pi-fw pi-user-minus',
+
+            },
+            {
+              label:'Search',
+              icon:'pi pi-fw pi-users',
+              items:[
+                {
+                  label:'Filter',
+                  icon:'pi pi-fw pi-filter',
+                  items:[
+                    {
+                      label:'Print',
+                      icon:'pi pi-fw pi-print'
+                    }
+                  ]
+                },
+                {
+                  icon:'pi pi-fw pi-bars',
+                  label:'List'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          label:'Events',
+          icon:'pi pi-fw pi-calendar',
+          items:[
+            {
+              label:'Edit',
+              icon:'pi pi-fw pi-pencil',
+              items:[
+                {
+                  label:'Save',
+                  icon:'pi pi-fw pi-calendar-plus'
+                },
+                {
+                  label:'Delete',
+                  icon:'pi pi-fw pi-calendar-minus'
+                }
+              ]
+            },
+            {
+              label:'Archieve',
+              icon:'pi pi-fw pi-calendar-times',
+              items:[
+                {
+                  label:'Remove',
+                  icon:'pi pi-fw pi-calendar-minus'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          label:'Quit',
+          icon:'pi pi-fw pi-power-off'
+        }
+      ]
     }
   },
   watch: {
@@ -348,6 +453,9 @@ export default {
     closeMenu() {
       document.body.click();
     },
+    closeCart(){
+      this.$refs.cart.hide()
+    }
   },
   mounted() {
 
@@ -355,12 +463,16 @@ export default {
   created() {
     this.isAuth = this.isAuthGet
     ApiService.get('categories/tree').then((res) => {
-      this.items = res.data.data
-    })
+      // this.items = res.data.data
+    });
+    if (this.isAuth){
+      this.$store.dispatch(Actions.GET_CART_ITEMS);
+    }
   },
   computed: {
     ...mapGetters({
       isAuthGet: "isUserAuthenticated",
+      myCart: "getMyCart"
     }),
   },
 };

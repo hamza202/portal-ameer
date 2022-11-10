@@ -15,6 +15,7 @@ import TheFooter from "@/components/TheFooter.vue";
 import {Actions} from "@/store/enums/StoreEnums";
 import store from '@/store';
 import JwtService from "@/services/JwtService";
+import {mapGetters} from "vuex";
 
 export default {
   components: {TheFooter, TheHeader},
@@ -29,19 +30,16 @@ export default {
     }
   },
   methods: {},
-  mounted() {
-
-  },
+  mounted() {},
    created() {
-      //  ApiService.post('auth/login', {email: 'hamza@gmail.com', password:'12345678'}).then((res) =>{
-      //   console.log(res)
-      // })
-
      store.dispatch(Actions.VERIFY_AUTH, { api_token: JwtService.getToken() });
      store.dispatch(Actions.CHECK_USER);
-
    },
-  computed: {},
+  computed: {
+    ...mapGetters({
+      isAuthGet: "isUserAuthenticated",
+    }),
+  },
 };
 </script>
 <style scoped></style>

@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^0.21.4",
     "feather-icons": "4",
+    "moment": "^2.29.1",
     "primeicons": "^6.0.1",
     "primevue": "^3",
     "swiper": "^8.4.3",
@@ -23,10 +24,10 @@
     "vue-meta": "3.0.0-alpha.10",
     "vue-plyr": "^7.0.0",
     "vue-router": "4",
+    "vue3-tel-input": "^1.0.4",
     "vuex": "^4.0.2",
     "vuex-module-decorators": "^1.0.1",
-    "yup": "^0.32.8",
-    "moment": "^2.29.1"
+    "yup": "^0.32.8"
   },
   "devDependencies": {
     "@intlify/vite-plugin-vue-i18n": "^6.0.1",

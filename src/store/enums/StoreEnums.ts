@@ -5,7 +5,9 @@ enum Actions {
     LOGOUT = 'logout',
     REGISTER = 'register',
     FORGOT_PASSWORD = 'forgotPassword',
-    CHECK_USER = 'checkUser'
+    CHECK_USER = 'checkUser',
+    GET_CART_ITEMS = 'getCartItems',
+    DELETE_CART_ITEM = 'deleteCartItem'
 
 }
 
@@ -16,6 +18,8 @@ enum Mutations {
     SET_USER = 'setUser',
     SET_PASSWORD = 'setPassword',
     SET_ERROR = 'setError',
+    SET_CART_ITEMS = 'setCartItems',
+    CHANGE_ITEM_DELETE_STATUS = 'changeItemDeleteStatus'
 }
 
 export { Actions, Mutations };

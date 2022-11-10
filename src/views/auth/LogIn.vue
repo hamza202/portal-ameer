@@ -73,10 +73,9 @@ export default {
       const [errorName] = Object.keys(this.$store.getters.getErrors);
       const error = this.$store.getters.getErrors[errorName];
       if (!error) {
-        this.$router.push({name: 'home'})
+        this.$router.push({name: 'home'});
       } else {
         this.$toast.add({severity: 'error', summary: 'error', detail: 'Wrong email or password', life: 3000});
-
       }
     }
   },

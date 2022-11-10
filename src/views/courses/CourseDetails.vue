@@ -1,11 +1,12 @@
 <template>
   <div v-if="course" class="course-page">
+    <ToastComp/>
     <div class="course-page-header">
       <div class="container-content">
         <div class="row align-items-center">
           <div class="col-lg-3">
             <div class="course-image">
-              <img :src="course.base_image" alt="" />
+              <img :src="course.base_image" alt=""/>
             </div>
           </div>
           <div class="col-lg-6">
@@ -18,29 +19,35 @@
               </div>
               <div class="add-to-favourite">
                 <router-link
-                  v-if="course.purchased"
-                  :to="`/courses/${$route.params.id}/watch`"
-                  class="btn add-to-cart main-btn"
+                    v-if="course.purchased"
+                    :to="`/courses/${$route.params.id}/watch`"
+                    class="btn add-to-cart main-btn"
                 >
                   Go to course
                 </router-link>
                 <button
-                  v-else
-                  class="btn add-to-cart main-btn"
-                  @click="addToCart()"
+                    v-else-if="!isItemInCart"
+                    class="btn add-to-cart main-btn"
+                    @click="addToCart()"
                 >
-                  Buy NOW
+                  {{ $t('add_to_cart') }}
                 </button>
-
                 <button
-                  :class="[
+                    v-else-if="isItemInCart"
+                    class="btn add-to-cart red-btn"
+                    @click="removeFromCart()"
+                >
+                  {{ $t('delete_from_cart') }}
+                </button>
+                <button
+                    :class="[
                     'btn',
                     'add-to-favourite-btn',
                     course.is_wishlist ? 'is_wishlist' : 'not_is_wishlist',
                   ]"
-                  @click="addToWishlist()"
+                    @click="addToWishlist()"
                 >
-                  <vue-feather type="heart" />
+                  <vue-feather type="heart"/>
                 </button>
               </div>
             </div>
@@ -49,9 +56,10 @@
             <div class="course-header-details-box">
               <h5>Course Category</h5>
               <p>
-                <vue-feather type="list" /><span>{{
-                  course.category.name
-                }}</span>
+                <vue-feather type="list"/>
+                <span>{{
+                    course.category.name
+                  }}</span>
               </p>
             </div>
             <div class="row">
@@ -59,9 +67,10 @@
                 <div class="course-header-details-box">
                   <h5>hours</h5>
                   <p>
-                    <vue-feather type="clock" /><span>{{
-                      course.number_of_hours
-                    }}</span>
+                    <vue-feather type="clock"/>
+                    <span>{{
+                        course.number_of_hours
+                      }}</span>
                   </p>
                 </div>
               </div>
@@ -69,9 +78,10 @@
                 <div class="course-header-details-box">
                   <h5>videos</h5>
                   <p>
-                    <vue-feather type="video" /><span>{{
-                      course.number_of_videos
-                    }}</span>
+                    <vue-feather type="video"/>
+                    <span>{{
+                        course.number_of_videos
+                      }}</span>
                   </p>
                 </div>
               </div>
@@ -79,9 +89,10 @@
                 <div class="course-header-details-box">
                   <h5>FILE</h5>
                   <p>
-                    <vue-feather type="download" /><span>{{
-                      course.number_of_download_files
-                    }}</span>
+                    <vue-feather type="download"/>
+                    <span>{{
+                        course.number_of_download_files
+                      }}</span>
                   </p>
                 </div>
               </div>
@@ -89,9 +100,10 @@
             <div class="course-header-details-box">
               <h5>levely</h5>
               <p>
-                <vue-feather type="trending-up" /><span>{{
-                  course.level.name
-                }}</span>
+                <vue-feather type="trending-up"/>
+                <span>{{
+                    course.level.name
+                  }}</span>
               </p>
             </div>
 
@@ -99,9 +111,9 @@
               <h5>Ratings</h5>
               <div class="d-flex">
                 <FiveStars
-                  size="5"
-                  themeStyle="1"
-                  :stars="course.rating.toFixed()"
+                    :stars="course.rating.toFixed()"
+                    size="5"
+                    themeStyle="1"
                 />
 
                 <span>4/5</span>
@@ -129,11 +141,12 @@
                 </p>
               </div>
               <div class="course-accordion">
-                <Accordion :activeIndex="activeUnitIndex">
+                <Accordion>
                   <AccordionTab
-                    v-for="(unit, unitIndex) in units"
-                    :key="unitIndex"
-                    ><template #header>
+                      v-for="(unit, unitIndex) in units"
+                      :key="unitIndex"
+                  >
+                    <template #header>
                       <h4>{{ unit.name }}</h4>
                       <div class="lectures-count">
                         {{ unit.lectures.length }} lectures
@@ -141,17 +154,17 @@
                     </template>
                     <ul>
                       <li
-                        v-for="(lecture, lectureIndex) in unit.lectures"
-                        :key="lectureIndex"
-                        @click="showVideo()"
+                          v-for="(lecture, lectureIndex) in unit.lectures"
+                          :key="lectureIndex"
+                          @click="showVideo()"
                       >
                         <div class="icon">
-                          <vue-feather type="video" />
+                          <vue-feather type="video"/>
                         </div>
                         <h5>{{ lecture.name }}</h5>
                         <div class="play">
                           <span>play</span>
-                          <vue-feather type="play" />
+                          <vue-feather type="play"/>
                         </div>
                       </li>
                     </ul>
@@ -199,14 +212,15 @@
                 <h3>Course instructor</h3>
                 <div class="course-page-sidebar-widget-body">
                   <div class="image">
-                    <img :src="course.instructor.profile_photo" alt="" />
+                    <img :src="course.instructor.profile_photo" alt=""/>
                   </div>
                   <h3>{{ course.instructor.name }}</h3>
                   <span>{{ course.instructor.working_field }} </span>
                   <router-link
-                    :to="`/instructors/${course.instructor.id}`"
-                    class="btn main-btn"
-                    >MORE</router-link
+                      :to="`/instructors/${course.instructor.id}`"
+                      class="btn main-btn"
+                  >MORE
+                  </router-link
                   >
                 </div>
               </div>
@@ -215,19 +229,19 @@
                 <div class="course-page-sidebar-widget-body">
                   <h3>Book a private appointment with</h3>
                   <span>instructor</span>
-                  <a href="" class="btn main-btn">Download</a>
+                  <a class="btn main-btn" href="">Download</a>
                 </div>
               </div>
-              <div class="course-page-sidebar-widget theme-widget-2">
+              <div class="course-page-sidebar-widget theme-widget-2" v-if="course.download_files.length">
                 <h3>Download Files</h3>
                 <div class="course-page-sidebar-widget-body">
                   <ul>
                     <li
-                      v-for="(file, fileIndex) in course.download_files"
-                      :key="fileIndex"
+                        v-for="(file, fileIndex) in course.download_files"
+                        :key="fileIndex"
                     >
                       <a :href="file.url">
-                        <vue-feather type="download" />
+                        <vue-feather type="download"/>
                         <span>{{ file.name }} </span>
                       </a>
                     </li>
@@ -239,14 +253,14 @@
                 <div class="course-page-sidebar-widget-body">
                   <ul>
                     <li
-                      v-for="(
+                        v-for="(
                         certificate, certificateIndex
                       ) in course.certificates"
-                      :key="certificateIndex"
+                        :key="certificateIndex"
                     >
                       <img
-                        :src="certificate.base_image || '/images/user-1.png'"
-                        :alt="certificate.company_name"
+                          :alt="certificate.company_name"
+                          :src="certificate.base_image || '/images/user-1.png'"
                       />
                     </li>
                   </ul>
@@ -258,7 +272,7 @@
       </div>
     </div>
   </div>
-  <LoadingContent v-else />
+  <LoadingContent v-else/>
 </template>
 
 <script>
@@ -267,6 +281,9 @@ import AccordionTab from "primevue/accordiontab";
 import FiveStars from "@/components/FiveStars.vue";
 import ApiService from "@/services/ApiService";
 import LoadingContent from "@/components/LoadingContent.vue";
+import {Actions, Mutations} from "@/store/enums/StoreEnums";
+import {mapGetters} from "vuex";
+
 export default {
   data() {
     return {
@@ -274,10 +291,23 @@ export default {
       units: [],
     };
   },
+  watch: {
+    itemHasDeleted: {
+      handler: function (){
+        this.deleteMessage()
+      }
+    }
+  },
   mounted() {
     this.getData();
   },
   methods: {
+    deleteMessage(){
+      this.$toast.add({severity: 'success', summary: 'Success', detail: "item is deleted", life: 3000});
+    },
+    removeFromCart(){
+      this.$store.dispatch(Actions.DELETE_CART_ITEM, this.isItemInCart.id);
+    },
     showVideo() {
       this.$router.push(`/courses/${this.$route.params.id}/watch`);
     },
@@ -295,33 +325,42 @@ export default {
         });
       } else {
         ApiService.post(`wish-lists?course_id=${this.$route.params.id}`).then(
-          (res) => {
-            this.course.is_wishlist = true;
-          }
+            (res) => {
+              this.course.is_wishlist = true;
+            }
         );
       }
     },
     addToCart() {
-      if (this.course.is_wishlist) {
-        ApiService.delete(`cart/items/${this.$route.params.id}`).then((res) => {
-          this.course.is_wishlist = false;
-        });
-      } else {
-        ApiService.post(`cart/items?course_id=${this.$route.params.id}`).then(
+      ApiService.post(`cart/items?course_id=${this.$route.params.id}`).then(
           (res) => {
-            this.course.is_wishlist = true;
+            this.$store.commit(Mutations.SET_CART_ITEMS, res)
+            this.$toast.add({severity: 'success', summary: 'Success', detail: res.data.message, life: 3000});
           }
-        );
-      }
+      );
     },
   },
   components: {
-    Accordion: Accordion,
-    AccordionTab: AccordionTab,
+    Accordion,
+    AccordionTab,
     FiveStars,
     LoadingContent,
   },
+
+  computed: {
+    ...mapGetters({
+      myCart: "getMyCart",
+      itemHasDeleted: "itemCartDeleted"
+    }),
+    isItemInCart(){
+      let arr = this.myCart.items;
+      return arr.find((item) => {
+        return item.course.id === Number(this.$route.params.id);
+      })
+    }
+  },
+  created() {
+
+  }
 };
 </script>
-
-<style></style>

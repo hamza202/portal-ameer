@@ -78,6 +78,14 @@ const routes = [
       pageTitle: "Wish Lists",
     },
   },
+  {
+    path: "/cart",
+    component: () => import("../src/views/Cart.vue"),
+    meta: {
+      requiresAuth: true,
+      pageTitle: "Cart",
+    },
+  },
   // {
   //     // the 404 route, when none of the above matches
   //     path: '/404',

@@ -11,7 +11,7 @@
       </span>
     </router-link>
     <div class="course-card-body">
-      <router-link :to="`/courses/${course.id}`" class="title-3 text-uppercase" href="#">
+      <router-link :to="`/courses/${course.id}`" class="title-3 text-uppercase" :title="course.name" href="#">
         {{ course.name }}
       </router-link>
       <p class="small-desc main-color mt-1">

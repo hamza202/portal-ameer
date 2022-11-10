@@ -23,5 +23,8 @@
   "enter_twitter_link": "Enter twitter ink",
   "linkedin": "Enter linkedin ink",
   "enter_website_link": "Enter website link",
-  "courses": "Courses"
+  "courses": "Courses",
+  "add_to_cart": "Add To Cart",
+  "delete_from_cart": "Remove From Cart"
+
 }

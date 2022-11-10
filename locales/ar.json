@@ -23,5 +23,7 @@
   "enter_twitter_link": "ادخل رابط تويتر",
   "enter_linkedin_link": "ادخل رابط لينكد ان",
   "enter_website_link": "ادخل رابط موقعك الإلكتروني",
-  "courses": "الدورات"
+  "courses": "الدورات",
+  "add_to_cart": "اضافة الى السلة",
+  "delete_from_cart": "خذف من السلة"
 }

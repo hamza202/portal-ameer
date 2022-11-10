@@ -11,12 +11,17 @@
 @import "other";
 @import 'footer';
 
-:root{
+:root {
   --primary-color: #1BE5B7;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #1BE5B7;
+  --bs-btn-active-border-color: $main-color;
 }
+
 :focus {
   outline: 0 !important;
 }
+
 .container-content {
   @apply xxlUp:max-w-[1500px] w-full smUp:w-[87%] pl-[15px] pr-[15px] smUp:pl-0 smUp:pr-0 relative ml-auto mr-auto
 }
@@ -34,9 +39,11 @@
           text-transform: uppercase;
           transition: all ease-out 0.3s;
           font-weight: 500;
-          &:hover{
+
+          &:hover {
             color: $second-color;
           }
+
           &.active-link {
             color: $title-color;
           }
@@ -100,10 +107,12 @@
 .p-overlaypanel {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
-.p-input-icon-left  .p-inputtext {
+
+.p-input-icon-left .p-inputtext {
   padding-right: 0.65rem;
   padding-left: 2.5rem;
 }
+
 //RTL
 html[dir=rtl] {
   .p-menubar .p-menubar-custom, .p-menubar .p-menubar-end {
@@ -111,7 +120,7 @@ html[dir=rtl] {
     margin-left: 0;
   }
 
-  .p-input-icon-left  .p-inputtext {
+  .p-input-icon-left .p-inputtext {
     padding-left: 0.65rem;
     padding-right: 2.5rem;
   }
@@ -130,7 +139,7 @@ html[dir=rtl] {
 .cart-drop-lst {
   li {
     p {
-      @include oneline1(2);
+      @include oneline();
     }
 
     @apply pb-3 mb-3 border-b border-gray-800
@@ -140,36 +149,44 @@ html[dir=rtl] {
 .main-link {
   @apply text-green-100 hover:text-green-500 duration-300 ease-in-out transition-all;
 }
-.section-padding{
+
+.section-padding {
   @apply py-20 mdDown:py-10 lgDown:py-16
 }
+
 .auth-card {
   @apply border border-gray-800 p-5 lgUp:p-8 xlUp:p-10 rounded-2xl
 }
-.form-style{
-  .field{
+
+.form-style {
+  .field {
     @apply mb-5;
-    label{
+    label {
       @apply pb-1 text-green-300;
     }
-    i{
+
+    i {
       @apply text-green-500;
     }
-    input{
+
+    input {
       @apply rounded-xl h-[50px] bg-gray-900 focus:bg-white-100;
     }
   }
 }
-.fv-plugins-message-container{
-  .p-error{
+
+.fv-plugins-message-container {
+  .p-error {
     @apply text-sm
   }
 }
-.field-checkbox{
-  .p-checkbox{
+
+.field-checkbox {
+  .p-checkbox {
     margin-inline-end: 0.4rem;
   }
 }
+
 //Start swiper config
 .swiper-button-next {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.59' height='12.35' viewBox='0 0 7.59 12.35'%3E%3Cpath id='Path_24' data-name='Path 24' d='M1681.443,2055.308l4.761,4.761-4.761,4.761' transform='translate(-1680.029 -2053.894)' fill='none' stroke='%23fff' stroke-linecap='round' stroke-width='2'/%3E%3C/svg%3E%0A");
@@ -194,14 +211,16 @@ html[dir=rtl] {
   background-size: 20% auto;
   background-position: center;
   transition: all ease-in-out 0.3s;
-  &:hover{
+
+  &:hover {
     @apply bg-green-100 border-green-100;
   }
 
 }
-html[dir='rtl']{
+
+html[dir='rtl'] {
   .swiper-button-next,
-  .swiper-button-prev{
+  .swiper-button-prev {
     transform: scale(-1);
   }
 }
@@ -213,21 +232,25 @@ html[dir='rtl']{
 .swiper-button-prev {
   @apply ltr:left-[2.5%] rtl:right-[2.5%] smDown:ltr:left-[10px] smDown:rtl:right-[10px]
 }
+
 //End swiper config
-.next-button{
+.next-button {
   transition: all ease-in-out 0.3s;
 }
-.tow-line{
+
+.tow-line {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.one-line{
+
+.one-line {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
 //Start Labs cars
 .labs-card {
   > .row {
@@ -311,6 +334,7 @@ html[dir='rtl']{
     font-size: 13px;
   }
 }
+
 //End labs card
 //Start courses Section
 .course-card {
@@ -364,9 +388,10 @@ html[dir='rtl']{
     border-bottom-right-radius: var(--stander-border-radius);
 
     .title-3 {
+      @include oneline();
+      display: block;
       font-weight: 500;
       color: $black-color;
-      @include oneline1(2);
 
       &:hover {
         color: $title-color;
@@ -422,6 +447,7 @@ html[dir='rtl']{
     color: $title-color;
   }
 }
+
 //End courses Section
 .instructors-card {
   border-radius: var(--stander-border-radius);
@@ -442,6 +468,7 @@ html[dir='rtl']{
     }
   }
 }
+
 .instructors-lessons {
   position: absolute;
   top: 20px;
@@ -453,7 +480,6 @@ html[dir='rtl']{
 }
 
 
-
 .photo-upload {
   height: auto;
   margin: 20px 0;
@@ -461,6 +487,7 @@ html[dir='rtl']{
   text-align: center;
   width: 100%;
 }
+
 .input-file {
   height: 0.1px;
   opacity: 0;
@@ -469,6 +496,7 @@ html[dir='rtl']{
   width: 0.1px;
   z-index: -1;
 }
+
 .input-file + label {
   background: transparent;
   border-radius: 50%;
@@ -481,7 +509,8 @@ html[dir='rtl']{
   text-align: center;
   width: 200px;
   position: relative;
-  em{
+
+  em {
     position: absolute;
     z-index: 10;
     background-color: $main-color;
@@ -497,10 +526,12 @@ html[dir='rtl']{
 
   }
 }
+
 .input-file + label:hover,
 .input-file + label:focus {
   cursor: pointer;
 }
+
 .image-preview {
   border-radius: 50%;
   height: 200px;
@@ -512,6 +543,7 @@ html[dir='rtl']{
   top: 0;
   width: 200px;
 }
+
 .image-preview__img {
   border: 2px solid #ced4da;
   border-radius: 50%;
@@ -522,6 +554,28 @@ html[dir='rtl']{
   object-position: center;
   width: 200px;
 }
-[dir=rtl] .breadcrumb-item + .breadcrumb-item::before{
+
+[dir=rtl] .breadcrumb-item + .breadcrumb-item::before {
   float: right;
+}
+
+.cart-container {
+  .cart-item {
+    &:nth-child(odd) {
+      @apply bg-[#FBFBFB]
+    }
+
+    &:nth-child(even) {
+      @apply bg-[#F8F8F8]
+    }
+  }
+}
+
+.cart-item {
+  h3 {
+    @include oneline1(2)
+  }
+}
+.course-page-header .course-image img{
+  @apply rounded-xl;
 }

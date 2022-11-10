@@ -6,7 +6,7 @@
   .course-image {
     img {
       height: 270px;
-      object-fit: contain;
+      object-fit: cover;
     }
   }
 
@@ -135,7 +135,6 @@
       display: flex;
       justify-content: space-between;
       border: none !important;
-      margin-bottom: 10px;
       .lectures-count {
         margin-left: auto;
         font-size: 14px;
@@ -156,9 +155,12 @@
         display: flex;
         align-items: center;
         cursor: pointer;
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-        border-bottom: 2px solid #f1f1f1;
+
+        &:not(:last-child){
+          border-bottom: 2px solid #f1f1f1;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+        }
 
         .icon {
           margin-right: 13px;
@@ -309,6 +311,7 @@
   padding: 20px 0 30px;
   h1 {
     font-size: 50px;
+    @apply mdDown:text-3xl;
     color: #fff;
     font-weight: bold;
     line-height: 1;

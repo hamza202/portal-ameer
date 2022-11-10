@@ -34,7 +34,7 @@
                     highly qualified trainers and virtual labs that simulate
                     reality.
                   </p>
-                  <router-link class="main-btn !px-7 mt-3" to="/log-in">
+                  <router-link class="main-btn !px-7 mt-3" to="/log-in" v-if="!isAuthGet">
                     {{ $t("sign_in") }}
                   </router-link>
                 </div>
@@ -439,6 +439,7 @@ import ApiService from "@/services/ApiService";
 import CourseCard from "@/components/courses/CourseCard.vue";
 import store from "@/store/index";
 import LoadingContent from "@/components/LoadingContent.vue";
+import {mapGetters} from "vuex";
 
 export default {
   name: "Home",
@@ -488,7 +489,11 @@ export default {
       }
     },
   },
-  mounted() {},
+  computed: {
+    ...mapGetters({
+      isAuthGet: "isUserAuthenticated",
+    }),
+  },
   created() {
     ApiService.get("labs").then((res) => {
       this.labs = res.data.data;
